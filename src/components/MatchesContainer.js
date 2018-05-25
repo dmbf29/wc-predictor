@@ -6,8 +6,8 @@ class MatchesContainer extends Component {
   componentDidMount() {
     axios.get('http://localhost:3001/api/v1/matches.json')
     .then(response => {
-      console.log(response)
-      this.setState({matches: response.data})
+      console.log(response.data.matches)
+      this.setState({matches: response.data.matches})
     })
     .catch(error => console.log(error))
   }
@@ -26,13 +26,13 @@ class MatchesContainer extends Component {
           return(
             <div className="match-tile" key={match.id} >
               <div className="match-home">
-                <h4>{match.team_home_id}</h4>
+                <h4>{match.team_home.name}</h4>
               </div>
               <div className="match-info">
                 <p>{match.kickoff_time}</p>
               </div>
               <div className="match-home">
-                <h4>{match.team_away_id}</h4>
+                <h4>{match.team_away.name}</h4>
               </div>
             </div>
           )
