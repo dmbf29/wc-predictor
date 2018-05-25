@@ -24,9 +24,12 @@ class MatchesContainer extends Component {
       <div className="matches-container">
         {this.state.matches.map((match) => {
           return(
-            <div className="match-tile" key={match.id} >
+            <div className="match-tile">
               <div className="match-home">
                 <h4>{match.team_home.name}</h4>
+              </div>
+              <div className="match-badge" style="background: url("fwc_darkbluebg.png") cover" >
+                <p>asad</p>
               </div>
               <div className="match-info">
                 <p>{match.kickoff_time}</p>
