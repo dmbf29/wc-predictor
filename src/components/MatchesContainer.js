@@ -1,10 +1,42 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import './MatchesContainer.css';
 
 class MatchesContainer extends Component {
+  componentDidMount() {
+    axios.get('http://localhost:3001/api/v1/matches.json')
+    .then(response => {
+      console.log(response)
+      this.setState({matches: response.data})
+    })
+    .catch(error => console.log(error))
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      matches: []
+    }
+  }
+
   render() {
     return (
-      <div>
-        Matches
+      <div className="matches-container">
+        {this.state.matches.map((match) => {
+          return(
+            <div className="match-tile" key={match.id} >
+              <div className="match-home">
+                <h4>{match.team_home_id}</h4>
+              </div>
+              <div className="match-info">
+                <p>{match.kickoff_time}</p>
+              </div>
+              <div className="match-home">
+                <h4>{match.team_away_id}</h4>
+              </div>
+            </div>
+          )
+        })}
       </div>
     )
   }

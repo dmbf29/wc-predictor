@@ -1,0 +1,10 @@
+.matches-container {
+  padding: 0 50px;
+}
+
+.match-tile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
