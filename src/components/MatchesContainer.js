@@ -25,16 +25,19 @@ class MatchesContainer extends Component {
         {this.state.matches.map((match) => {
           return(
             <div className="match-tile">
-              <div className="match-home">
+              <div className="match-home match-team">
                 <h4>{match.team_home.name}</h4>
               </div>
-              <div className="match-badge" style="background: url("fwc_darkbluebg.png") cover" >
-                <p>asad</p>
+              <div>
+                <img className="team-flag" src={require(`../flags/${match.team_home.abbrev.toLowerCase()}.png`)} />
               </div>
               <div className="match-info">
                 <p>{match.kickoff_time}</p>
               </div>
-              <div className="match-home">
+              <div>
+                <img className="team-flag" src={require(`../flags/${match.team_away.abbrev.toLowerCase()}.png`)} />
+              </div>
+              <div className="match-away match-team">
                 <h4>{match.team_away.name}</h4>
               </div>
             </div>
