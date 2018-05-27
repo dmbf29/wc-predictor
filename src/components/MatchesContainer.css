@@ -4,7 +4,7 @@
 
 .match-tile {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 50px 0;
 }
@@ -20,6 +20,7 @@
 }
 
 .match-info {
+  flex: 1;
 }
 
 .team-flag {
@@ -30,4 +31,11 @@
 }
 .match-team h4 {
   margin: 5px;
+}
+
+.flag-group  {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
