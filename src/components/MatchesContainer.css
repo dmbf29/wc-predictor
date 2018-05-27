@@ -23,6 +23,14 @@
   flex: 1;
 }
 
+.flag-box {
+  padding: 10px 5px;
+  max-width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .team-flag {
   width: 100px;
 }
@@ -38,4 +46,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.active {
+  background-color: #0f4583;
+  border-radius: 5px;
 }

@@ -5,21 +5,28 @@ import TeamPrediction from './TeamPrediction'
 import DrawPrediction from './DrawPrediction'
 
 class MatchesContainer extends Component {
-  componentDidMount() {
-    axios.get('http://localhost:3001/api/v1/matches.json')
-    .then(response => {
-      console.log(response)
-      this.setState({matches: response.data.matches})
-    })
-    .catch(error => console.log(error))
-  }
-
-
   constructor(props) {
     super(props)
     this.state = {
       matches: []
     }
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:3001/api/v1/matches.json')
+    .then(response => {
+      this.setState({matches: response.data.matches})
+      console.log(this.state)
+    })
+    .catch(error => console.log(error))
+  }
+
+  updateMatchPrediction = (prediction) => {
+    const matches = this.state.matches
+    const old_match = matches.find(x => x.id === prediction.data.prediction.match_id);
+    old_match["prediction"] = prediction.data.prediction
+    this.setState({matches: matches})
+    console.log(this.state)
   }
 
   render() {
@@ -35,13 +42,13 @@ class MatchesContainer extends Component {
               </div>
               <div className="flag-group">
                 <div className="match-home match-team">
-                  <TeamPrediction match={match} team={match.team_home} />
+                  <TeamPrediction updateMatch={this.updateMatchPrediction} matches={this.state.matches} match={match} team={match.team_home} />
                 </div>
                 <div className="match-away match-team">
-                  <TeamPrediction match={match} team={match.team_away} />
+                  <TeamPrediction matches={this.state.matches} match={match} team={match.team_away} />
                 </div>
                 <div className="match-draw match-team">
-                  <DrawPrediction match={match} />
+                  <DrawPrediction matches={this.state.matches} match={match} />
                 </div>
               </div>
             </div>

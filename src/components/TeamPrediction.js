@@ -3,11 +3,18 @@ import axios from 'axios'
 import update from 'immutability-helper'
 
 class TeamPrediction extends Component {
+  constructor() {
+    super()
+    this.state = {
+      status: 'inactive'
+    }
+  }
 
   render() {
     const addNewPrediction = (team) => {
-      console.log(this.props.team.name)
-      console.log(this.props.match)
+      // console.log(this.props.team.name)
+      console.log(this.state)
+      // console.log(this.props.match)
       axios.post(
         'http://localhost:3001/api/v1/predictions',
         { prediction:
@@ -20,16 +27,22 @@ class TeamPrediction extends Component {
         }
       )
       .then(response => {
-        console.log(response)
-        const predictions = update(this.state.predictions, {
-          $splice: [[0, 0, response.data]]
-        })
-        this.setState({predictions: predictions})
+        // console.log(this.props)
+        this.props.updateMatch(response)
+        // console.log(response.data)
+        // console.log(this)
+        // this.setState({status: 'active'})
+        // console.log(this.state)
+        // console.log(this)
+        // const matches = update(this.state.matches, {
+        //   $splice: [[0, 0, response.data]]
+        // })
+        // this.setState({matches: matches})
       })
       .catch(error => console.log(error))
     }
     return (
-      <div onClick={() => { addNewPrediction() }}>
+      <div className={'flag-box ' + this.state.status} onClick={() => { addNewPrediction() }}>
         <img className="team-flag" src={require(`../flags/${this.props.team.abbrev.toLowerCase()}.png`)} atl="team-flag" />
       </div>
     );

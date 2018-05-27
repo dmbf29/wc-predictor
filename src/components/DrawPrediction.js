@@ -3,6 +3,13 @@ import axios from 'axios'
 import update from 'immutability-helper'
 
 class DrawPrediction extends Component {
+  constructor() {
+    super()
+    this.state = {
+      status: 'inactive'
+    }
+  }
+
 
   render() {
     const addNewPrediction = () => {
@@ -20,15 +27,12 @@ class DrawPrediction extends Component {
       )
       .then(response => {
         console.log(response)
-        const predictions = update(this.state.predictions, {
-          $splice: [[0, 0, response.data]]
-        })
-        this.setState({predictions: predictions})
+        this.setState({status: 'active'})
       })
       .catch(error => console.log(error))
     }
     return (
-      <div onClick={() => { addNewPrediction() }}>
+      <div className={'flag-box ' + this.state.status} onClick={() => { addNewPrediction() }}>
         <img className="team-flag" src={require(`../flags/draw1.png`)} atl="team-flag" />
       </div>
     );
