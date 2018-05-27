@@ -52,3 +52,9 @@
   background-color: #EAE3BA;
   border-radius: 5px;
 }
+
+@media only screen and (max-width : 480px) {
+  .team-flag {
+    width: 50px;
+  }
+}
