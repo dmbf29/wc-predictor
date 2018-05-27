@@ -21,12 +21,11 @@ class MatchesContainer extends Component {
     .catch(error => console.log(error))
   }
 
-  updateMatchPrediction = (prediction) => {
+  createMatchPrediction = (prediction) => {
     const matches = this.state.matches
     const old_match = matches.find(x => x.id === prediction.data.prediction.match_id);
     old_match["prediction"] = prediction.data.prediction
     this.setState({matches: matches})
-    console.log(this.state)
   }
 
   render() {
@@ -42,10 +41,10 @@ class MatchesContainer extends Component {
               </div>
               <div className="flag-group">
                 <div className="match-home match-team">
-                  <TeamPrediction updateMatch={this.updateMatchPrediction} matches={this.state.matches} match={match} team={match.team_home} />
+                  <TeamPrediction createPrediction={this.createMatchPrediction} matches={this.state.matches} match={match} team={match.team_home} />
                 </div>
                 <div className="match-away match-team">
-                  <TeamPrediction matches={this.state.matches} match={match} team={match.team_away} />
+                  <TeamPrediction createPrediction={this.createMatchPrediction} matches={this.state.matches} match={match} team={match.team_away} />
                 </div>
                 <div className="match-draw match-team">
                   <DrawPrediction matches={this.state.matches} match={match} />
