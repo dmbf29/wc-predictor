@@ -7,7 +7,6 @@ class MatchesContainer extends Component {
   componentDidMount() {
     axios.get('http://localhost:3001/api/v1/matches.json')
     .then(response => {
-      console.log(response.data.matches)
       this.setState({matches: response.data.matches})
     })
     .catch(error => console.log(error))
