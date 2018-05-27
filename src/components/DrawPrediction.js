@@ -29,6 +29,8 @@ class DrawPrediction extends Component {
         { prediction:
           {
             draw: true,
+            winner_id: null,
+            loser_id: null,
             match_id: this.props.match.id,
             round_id: this.props.match.round.id,
             user_id: 1
