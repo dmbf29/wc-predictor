@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './MatchesContainer.css';
+import TeamPrediction from './TeamPrediction'
 
 class MatchesContainer extends Component {
   componentDidMount() {
@@ -24,7 +25,7 @@ class MatchesContainer extends Component {
       <div className="matches-container">
         {this.state.matches.map((match) => {
           return(
-            <div className="match-tile">
+            <div className="match-tile" key={match.id} >
               <div className="match-info">
                 <p>{match.team_home.name} vs. {match.team_away.name}</p>
                 <p>{match.group.name}</p>
@@ -32,10 +33,10 @@ class MatchesContainer extends Component {
               </div>
               <div className="flag-group">
                 <div className="match-home match-team">
-                  <img className="team-flag" src={require(`../flags/${match.team_home.abbrev.toLowerCase()}.png`)} />
+                  <TeamPrediction match={match} team={match.team_home} />
                 </div>
                 <div className="match-away match-team">
-                  <img className="team-flag" src={require(`../flags/${match.team_away.abbrev.toLowerCase()}.png`)} />
+                  <TeamPrediction match={match} team={match.team_away} />
                 </div>
                 <div className="match-draw match-team">
                   <img className="team-flag" src={require('../flags/draw1.png')} />
