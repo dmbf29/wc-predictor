@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './MatchesContainer.css';
 import TeamPrediction from './TeamPrediction'
+import DrawPrediction from './DrawPrediction'
 
 class MatchesContainer extends Component {
   componentDidMount() {
@@ -38,7 +39,7 @@ class MatchesContainer extends Component {
                   <TeamPrediction match={match} team={match.team_away} />
                 </div>
                 <div className="match-draw match-team">
-                  <img className="team-flag" src={require('../flags/draw1.png')} />
+                  <DrawPrediction match={match} team={match.team_away} />
                 </div>
               </div>
             </div>
