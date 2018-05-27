@@ -39,7 +39,7 @@ class MatchesContainer extends Component {
                   <TeamPrediction match={match} team={match.team_away} />
                 </div>
                 <div className="match-draw match-team">
-                  <DrawPrediction match={match} team={match.team_away} />
+                  <DrawPrediction match={match} />
                 </div>
               </div>
             </div>

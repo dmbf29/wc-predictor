@@ -4,8 +4,7 @@ import axios from 'axios'
 class DrawPrediction extends Component {
 
   render() {
-    const addNewPrediction = (team) => {
-      console.log(this.props.team.name)
+    const addNewPrediction = () => {
       console.log(this.props.match)
       axios.post(
         'http://localhost:3001/api/v1/predictions',
