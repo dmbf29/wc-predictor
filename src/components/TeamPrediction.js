@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import update from 'immutability-helper'
 
 class TeamPrediction extends Component {
 
@@ -20,6 +21,10 @@ class TeamPrediction extends Component {
       )
       .then(response => {
         console.log(response)
+        const predictions = update(this.state.predictions, {
+          $splice: [[0, 0, response.data]]
+        })
+        this.setState({predictions: predictions})
       })
       .catch(error => console.log(error))
     }
