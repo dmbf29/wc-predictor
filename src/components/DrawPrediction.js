@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import update from 'immutability-helper'
 
 class DrawPrediction extends Component {
   constructor() {
@@ -8,6 +7,17 @@ class DrawPrediction extends Component {
     this.state = {
       status: 'inactive'
     }
+  }
+
+  updateActivePredictions = () => {
+    const match_row = document.getElementById('match' + this.props.match.id)
+    const flags = match_row.querySelectorAll('.flag-box')
+    flags.forEach((flag) => {
+      flag.classList.remove('active')
+    })
+    const thisFlag = match_row.querySelector('.draw')
+    console.log(match_row)
+    thisFlag.classList.add('active')
   }
 
 
@@ -26,14 +36,14 @@ class DrawPrediction extends Component {
         }
       )
       .then(response => {
-        console.log(response)
-        this.setState({status: 'active'})
+        this.props.createPrediction(response)
+        this.updateActivePredictions()
       })
       .catch(error => console.log(error))
     }
     return (
-      <div className={'flag-box ' + this.state.status} onClick={() => { addNewPrediction() }}>
-        <img className="team-flag" src={require(`../flags/draw1.png`)} atl="team-flag" />
+      <div className={'flag-box draw ' + this.state.status} onClick={() => { addNewPrediction() }}>
+        <img className="team-flag" src={require(`../flags/draw1.png`)} alt="team-flag" />
       </div>
     );
   }

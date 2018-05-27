@@ -32,22 +32,23 @@ class MatchesContainer extends Component {
     return (
       <div className="matches-container">
         {this.state.matches.map((match) => {
+          const noPredictionMade = match.prediction == null
           return(
-            <div className="match-tile" key={match.id} >
+            <div className="match-tile" id={'match' + match.id} key={match.id} >
               <div className="match-info">
-                <p>{match.team_home.name} vs. {match.team_away.name}</p>
+                <p><strong>{match.team_home.name} vs. {match.team_away.name}</strong></p>
                 <p>{match.group.name}</p>
-                <p>{match.kickoff_time}</p>
+                <p><em>{match.kickoff_time}</em></p>
               </div>
               <div className="flag-group">
                 <div className="match-home match-team">
-                  <TeamPrediction createPrediction={this.createMatchPrediction} matches={this.state.matches} match={match} team={match.team_home} />
+                  <TeamPrediction status={ noPredictionMade ? "inactive" : "active"} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} />
                 </div>
                 <div className="match-away match-team">
-                  <TeamPrediction createPrediction={this.createMatchPrediction} matches={this.state.matches} match={match} team={match.team_away} />
+                  <TeamPrediction createPrediction={this.createMatchPrediction} match={match} team={match.team_away} />
                 </div>
                 <div className="match-draw match-team">
-                  <DrawPrediction matches={this.state.matches} match={match} />
+                  <DrawPrediction createPrediction={this.createMatchPrediction} match={match} />
                 </div>
               </div>
             </div>
