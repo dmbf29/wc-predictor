@@ -9,22 +9,25 @@
   margin: 50px 0;
 }
 
+.match-tile p {
+  margin: 0;
+}
+
 .match-home {
-  flex: 1;
 }
 
 .match-away {
-  flex: 1;
 }
 
 .match-info {
-  flex: 1;
 }
 
 .team-flag {
   width: 100px;
 }
-
+.match-team {
+  flex: 1;
+}
 .match-team h4 {
   margin: 5px;
 }

@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 .App {
   text-align: center;
   color: #0f4583;
+  font-family: 'Open Sans';
 }
 
 .App-header {
