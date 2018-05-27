@@ -22,6 +22,16 @@ class TeamPrediction extends Component {
 
   render() {
     const noPredictionMade = this.props.match.prediction == null
+    const isInactive = () => {
+      if(noPredictionMade) {
+        return true;
+      } else if(this.props.match.prediction.winner_id === this.props.team.id) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    console.log(isInactive())
     const addNewPrediction = () => {
       axios.post(
         'http://localhost:3001/api/v1/predictions',
@@ -30,6 +40,7 @@ class TeamPrediction extends Component {
             winner_id: this.props.team.id,
             match_id: this.props.match.id,
             round_id: this.props.match.round.id,
+            draw: false,
             user_id: 1
           }
         }
@@ -49,6 +60,7 @@ class TeamPrediction extends Component {
             loser_id: null,
             match_id: this.props.match.id,
             round_id: this.props.match.round.id,
+            draw: false,
             user_id: 1
           }
         }
@@ -60,7 +72,7 @@ class TeamPrediction extends Component {
       .catch(error => console.log(error))
     }
     return (
-      <div className={'flag-box ' + this.props.team.abbrev + ' '+ this.state.status} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
+      <div className={'flag-box ' + this.props.team.abbrev + ' ' + (isInactive() ? ("inactive") : ("active"))} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
         <img className="team-flag" src={require(`../flags/${this.props.team.abbrev.toLowerCase()}.png`)} alt="team-flag" />
       </div>
     );
