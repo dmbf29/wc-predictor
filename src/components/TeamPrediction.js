@@ -31,7 +31,6 @@ class TeamPrediction extends Component {
         return true;
       }
     }
-    console.log(isInactive())
     const addNewPrediction = () => {
       axios.post(
         'http://localhost:3001/api/v1/predictions',
@@ -73,7 +72,7 @@ class TeamPrediction extends Component {
     }
     return (
       <div className={'flag-box ' + this.props.team.abbrev + ' ' + (isInactive() ? ("inactive") : ("active"))} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
-        <img className="team-flag" src={require(`../flags/${this.props.team.abbrev.toLowerCase()}.png`)} alt="team-flag" />
+        <img className="team-flag" src={require(`./flags/${this.props.team.abbrev.toLowerCase()}.png`)} alt="team-flag" />
       </div>
     );
   }

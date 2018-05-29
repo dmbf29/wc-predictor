@@ -16,7 +16,6 @@ class DrawPrediction extends Component {
       flag.classList.remove('active')
     })
     const thisFlag = match_row.querySelector('.draw')
-    console.log(match_row)
     thisFlag.classList.add('active')
   }
 
@@ -33,7 +32,6 @@ class DrawPrediction extends Component {
       }
     }
     const addNewPrediction = () => {
-      console.log(this.props.match)
       axios.post(
         'http://localhost:3001/api/v1/predictions',
         { prediction:
@@ -74,8 +72,8 @@ class DrawPrediction extends Component {
       .catch(error => console.log(error))
     }
     return (
-            <div className={'flag-box draw ' + ' ' + (isInactive() ? ("inactive") : ("active"))} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
-        <img className="team-flag" src={require(`../flags/draw1.png`)} alt="team-flag" />
+        <div className={'flag-box draw ' + ' ' + (isInactive() ? ("inactive") : ("active"))} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
+        <img className="team-flag" src={require(`./flags/draw1.png`)} alt="team-flag" />
       </div>
     );
   }

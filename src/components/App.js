@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import banner from './banner.gif';
+import banner from './assets/banner.gif';
 import './App.css';
-import MatchesContainer from './components/MatchesContainer'
+import MatchesContainer from './MatchesContainer'
 
 class App extends Component {
   render() {
@@ -9,7 +9,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={banner} className="App-banner" alt="banner" />
-          <h1 className="App-title"></h1>
         </header>
         <MatchesContainer />
       </div>
