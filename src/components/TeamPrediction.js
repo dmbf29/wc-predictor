@@ -16,7 +16,6 @@ class TeamPrediction extends Component {
       flag.classList.remove('active')
     })
     const thisFlag = match_row.querySelector('.' + this.props.team.abbrev)
-    console.log(match_row)
     thisFlag.classList.add('active')
   }
 
@@ -45,6 +44,7 @@ class TeamPrediction extends Component {
         }
       )
       .then(response => {
+        console.log(response.data)
         this.props.createPrediction(response)
         this.updateActivePredictions()
       })
@@ -65,6 +65,7 @@ class TeamPrediction extends Component {
         }
       )
       .then(response => {
+        console.log(response.data)
         this.props.createPrediction(response)
         this.updateActivePredictions()
       })

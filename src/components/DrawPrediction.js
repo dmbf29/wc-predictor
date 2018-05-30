@@ -46,6 +46,7 @@ class DrawPrediction extends Component {
         }
       )
       .then(response => {
+        console.log(response.data)
         this.props.createPrediction(response)
         this.updateActivePredictions()
       })
@@ -66,6 +67,7 @@ class DrawPrediction extends Component {
         }
       )
       .then(response => {
+        console.log(response.data)
         this.props.createPrediction(response)
         this.updateActivePredictions()
       })
