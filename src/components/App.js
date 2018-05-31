@@ -12,7 +12,11 @@ class App extends Component {
     this.state = {
       matches: []
     };
-    console.log(this)
+  }
+
+  logOut() {
+    delete localStorage.jwt
+    this.props.history.push(`/`)
   }
 
   login () {
@@ -28,20 +32,18 @@ class App extends Component {
         }
       )
       .then(response => {
-        console.log(response.data)
         localStorage.setItem("jwt", response.data.jwt)
+        this.props.history.push(`/`)
       })
       .catch(error => console.log(error))
   }
 
   getMatches () {
     let token = "Bearer " + localStorage.getItem("jwt")
-    console.log(token)
-    console.log(this)
     axios.get('http://localhost:3001/api/v1/matches.json', { headers: { 'Authorization': token }})
     .then(response => {
-      console.log(response)
       this.setState({matches: response.data.matches})
+      console.log(localStorage)
       console.log(this.state)
     })
     .catch(error => console.log(error))
@@ -53,37 +55,8 @@ class App extends Component {
         <header className="App-header">
           <img src={banner} className="App-banner" alt="banner" />
         </header>
-        <Link to='/store'>Store</Link>
-        <form>
-          <label htmlFor="email">Email: </label>
-          <br />
-          <input
-            name="email"
-            id="email"
-            type="email"
-          />
-          <br /><br />
-          <label htmlFor="password">Password:</label>
-          <br />
-          <input
-            name="password"
-            id="password"
-            type="password"
-          />
-          </form>
-          <br />
-          <button
-            onClick={this.login}
-          >
-              Login
-          </button>
-        <br />
-        <button
-          onClick={this.getMatches.bind(this)}
-          style={{marginTop: "10vh"}}
-          >
-          Get Matches
-        </button>
+        <Link to='/' onClick={this.logOut}>Log out</Link>
+        <Router />
       </div>
     );
   }

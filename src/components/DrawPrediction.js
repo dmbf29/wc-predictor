@@ -43,7 +43,8 @@ class DrawPrediction extends Component {
             round_id: this.props.match.round.id,
             user_id: 1
           }
-        }
+        },
+        { headers: { 'Authorization': this.props.token }}
       )
       .then(response => {
         console.log(response.data)
@@ -64,7 +65,8 @@ class DrawPrediction extends Component {
             round_id: this.props.match.round.id,
             user_id: 1
           }
-        }
+        },
+        { headers: { 'Authorization': this.props.token }}
       )
       .then(response => {
         console.log(response.data)

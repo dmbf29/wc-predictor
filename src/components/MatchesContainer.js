@@ -10,12 +10,17 @@ class MatchesContainer extends Component {
     this.state = {
       matches: []
     }
+    if(localStorage.jwt === undefined) {
+      this.props.history.push(`/log_in`)
+    }
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/api/v1/matches.json')
+    let token = "Bearer " + localStorage.getItem("jwt")
+    axios.get('http://localhost:3001/api/v1/matches.json', { headers: { 'Authorization': token }})
     .then(response => {
-      this.setState({matches: response.data.matches})
+      this.setState({matches: response.data.matches, token: token})
+      console.log(localStorage)
       console.log(this.state)
     })
     .catch(error => console.log(error))
@@ -42,13 +47,13 @@ class MatchesContainer extends Component {
               </div>
               <div className="flag-group">
                 <div className="match-home match-team">
-                  <TeamPrediction status={ noPredictionMade ? "inactive" : "active"} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} />
+                  <TeamPrediction token={this.state.token} status={ noPredictionMade ? "inactive" : "active"} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} />
                 </div>
                 <div className="match-away match-team">
-                  <TeamPrediction createPrediction={this.createMatchPrediction} match={match} team={match.team_away} />
+                  <TeamPrediction token={this.state.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_away} />
                 </div>
                 <div className="match-draw match-team">
-                  <DrawPrediction createPrediction={this.createMatchPrediction} match={match} />
+                  <DrawPrediction token={this.state.token} createPrediction={this.createMatchPrediction} match={match} />
                 </div>
               </div>
             </div>
