@@ -7,6 +7,7 @@ class TeamPrediction extends Component {
     this.state = {
       status: 'inactive'
     }
+    console.log(this.props)
   }
 
   updateActivePredictions = () => {
@@ -41,7 +42,8 @@ class TeamPrediction extends Component {
             draw: false,
             user_id: 1
           }
-        }
+        },
+        { headers: { 'Authorization': this.props.token }}
       )
       .then(response => {
         console.log(response.data)
@@ -62,7 +64,8 @@ class TeamPrediction extends Component {
             draw: false,
             user_id: 1
           }
-        }
+        },
+        { headers: { 'Authorization': this.props.token }}
       )
       .then(response => {
         console.log(response.data)
