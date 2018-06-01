@@ -10,7 +10,7 @@ class SignUp extends Component {
     const password = document.getElementById("password").value
     const password_confirmation = document.getElementById("password_confirmation").value
     axios.post(
-        'http://localhost:3001/api/v1/users',
+        'https://wc-predictor-api.herokuapp.com/api/v1/users',
         { user:
           {
             name: name,
@@ -23,7 +23,7 @@ class SignUp extends Component {
       .then(response => {
         console.log(response.data)
         axios.post(
-          'http://localhost:3001/api/v1/user_token',
+          'https://wc-predictor-api.herokuapp.com/api/v1/user_token',
           { auth:
             {
               email: email,
@@ -43,47 +43,34 @@ class SignUp extends Component {
   render() {
     return (
       <div className="App">
-        <form>
-          <label htmlFor="name">Name:</label>
-          <br />
-          <input
-            name="name"
-            id="name"
-            type="name"
-          />
-          <br /><br />
-          <label htmlFor="email">Email: </label>
-          <br />
-          <input
-            name="email"
-            id="email"
-            type="email"
-          />
-          <br /><br />
-          <label htmlFor="password">Password:</label>
-          <br />
-          <input
-            name="password"
-            id="password"
-            type="password"
-          />
-          <br /><br />
-          <label htmlFor="password_confirmation">Password Confirm:</label>
-          <br />
-          <input
-            name="password_confirmation"
-            id="password_confirmation"
-            type="password_confirmation"
-          />
-        </form>
-        <br />
-        <button style={{backgroundColor:'#0f4583', color: 'white'}} className="btn"
-          onClick={this.signUp.bind(this)}
-        >
-            Sign Up
-        </button>
-        <br />
-        <Link to='/sign_in'>Sign In</Link>
+        <div className="form-container">
+          <form>
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter email" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input type="password" className="form-control" id="password" placeholder="Password" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password_confirmation">Confirm Password</label>
+              <input type="password" className="form-control" id="password_confirmation" placeholder="Confirm Password" />
+            </div>
+            <div className="form-group">
+              <button className="red-button btn"
+                onClick={this.signUp.bind(this)}
+              >
+                  Sign Up
+              </button>
+            </div>
+            <Link to='/sign_in'>Sign In</Link>
+          </form>
+        </div>
       </div>
     );
   }

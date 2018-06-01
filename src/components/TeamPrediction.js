@@ -33,7 +33,7 @@ class TeamPrediction extends Component {
     }
     const addNewPrediction = () => {
       axios.post(
-        'http://localhost:3001/api/v1/predictions',
+        'https://wc-predictor-api.herokuapp.com/api/v1/predictions',
         { prediction:
           {
             winner_id: this.props.team.id,
@@ -54,7 +54,7 @@ class TeamPrediction extends Component {
     }
     const updatePrediction = (prediction_id) => {
       axios.post(
-        `http://localhost:3001/api/v1/predictions/${prediction_id}`,
+        `https://wc-predictor-api.herokuapp.com/api/v1/predictions/${prediction_id}`,
         { prediction:
           {
             winner_id: this.props.team.id,

@@ -18,7 +18,7 @@ class Login extends Component {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     axios.post(
-        'http://localhost:3001/api/v1/user_token',
+        'https://wc-predictor-api.herokuapp.com/api/v1/user_token',
         { auth:
           {
             email: email,

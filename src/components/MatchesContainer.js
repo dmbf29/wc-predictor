@@ -17,7 +17,7 @@ class MatchesContainer extends Component {
 
   componentDidMount() {
     let token = "Bearer " + localStorage.getItem("jwt")
-    axios.get('http://localhost:3001/api/v1/matches.json', { headers: { 'Authorization': token }})
+    axios.get('https://wc-predictor-api.herokuapp.com/api/v1/matches.json', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({matches: response.data.matches, token: token})
       console.log(localStorage)

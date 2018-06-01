@@ -33,7 +33,7 @@ class DrawPrediction extends Component {
     }
     const addNewPrediction = () => {
       axios.post(
-        'http://localhost:3001/api/v1/predictions',
+        'https://wc-predictor-api.herokuapp.com/api/v1/predictions',
         { prediction:
           {
             draw: true,
@@ -55,7 +55,7 @@ class DrawPrediction extends Component {
     }
     const updatePrediction = (prediction_id) => {
       axios.post(
-        `http://localhost:3001/api/v1/predictions/${prediction_id}`,
+        `https://wc-predictor-api.herokuapp.com/api/v1/predictions/${prediction_id}`,
         { prediction:
           {
             draw: true,

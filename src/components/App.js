@@ -23,7 +23,7 @@ class App extends Component {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     axios.post(
-        'http://localhost:3001/api/v1/user_token',
+        'https://wc-predictor-api.herokuapp.com/api/v1/user_token',
         { auth:
           {
             email: email,
@@ -40,7 +40,7 @@ class App extends Component {
 
   getMatches () {
     let token = "Bearer " + localStorage.getItem("jwt")
-    axios.get('http://localhost:3001/api/v1/matches.json', { headers: { 'Authorization': token }})
+    axios.get('https://wc-predictor-api.herokuapp.com/api/v1/matches.json', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({matches: response.data.matches})
       console.log(localStorage)

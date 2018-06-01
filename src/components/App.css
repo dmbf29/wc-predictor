@@ -24,6 +24,37 @@
   font-size: large;
 }
 
+.form-container {
+  margin: 20px 0 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f4583 url('./fwc_darkbluebg.png') repeat;
+  padding: 20px 0;
+}
+
+.form-container a {
+  color: white;
+}
+.form-container label {
+  color: white;
+}
+
+.form-container a:hover {
+  color: #B40B22;
+  text-decoration: none;
+}
+
+.red-button {
+  background-color: #B40B22;
+  color: white;
+}
+
+.blue-button {
+  background-color: #0f4583;
+  color: white;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
