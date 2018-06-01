@@ -11,7 +11,7 @@ class MatchesContainer extends Component {
       matches: []
     }
     if(localStorage.jwt === undefined) {
-      this.props.history.push(`/log_in`)
+      this.props.history.push(`/sign_in`)
     }
   }
 

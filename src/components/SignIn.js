@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-class Login extends Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ class Login extends Component {
     };
   }
 
-  login () {
+  signIn () {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     axios.post(
@@ -36,34 +36,29 @@ class Login extends Component {
   render() {
     return (
       <div className="App">
-        <form>
-          <label htmlFor="email">Email: </label>
-          <br />
-          <input
-            name="email"
-            id="email"
-            type="email"
-          />
-          <br /><br />
-          <label htmlFor="password">Password:</label>
-          <br />
-          <input
-            name="password"
-            id="password"
-            type="password"
-          />
-        </form>
-        <br />
-        <button style={{backgroundColor:'#0f4583', color: 'white'}} className="btn"
-          onClick={this.login.bind(this)}
-        >
-            Login
-        </button>
-        <br />
-        <Link to='/sign_up'>Sign up</Link>
+        <div className="form-container">
+          <form>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input type="password" className="form-control" id="password" placeholder="Password" />
+            </div>
+            <div className="form-group">
+              <button className="red-button btn"
+                onClick={this.signIn.bind(this)}
+              >
+                  Sign In
+              </button>
+            </div>
+            <Link to='/sign_up'>Sign up</Link>
+          </form>
+        </div>
       </div>
     );
   }
 }
 
-export default Login;
+export default SignIn;
