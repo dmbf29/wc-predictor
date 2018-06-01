@@ -4,7 +4,9 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 class SignUp extends Component {
-  signUp () {
+  signUp(event) {
+    console.log(event)
+    event.preventDefault();
     const name = document.getElementById("name").value
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
@@ -47,7 +49,7 @@ class SignUp extends Component {
           <form>
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter email" />
+              <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>

@@ -14,7 +14,10 @@ class SignIn extends Component {
     };
   }
 
-  signIn () {
+  signIn(event) {
+    event.preventDefault();
+    console.log('signing in')
+    console.log(localStorage)
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     axios.post(
@@ -27,6 +30,7 @@ class SignIn extends Component {
         }
       )
       .then(response => {
+        console.log(response)
         localStorage.setItem("jwt", response.data.jwt)
         this.props.history.push(`/`)
       })

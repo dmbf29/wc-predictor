@@ -12,14 +12,15 @@ class App extends Component {
     this.state = {
       matches: []
     };
+    console.log(localStorage)
   }
 
-  logOut() {
+  signOut() {
     delete localStorage.jwt
     this.props.history.push(`/`)
   }
 
-  login () {
+  signIn () {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     axios.post(
@@ -55,7 +56,7 @@ class App extends Component {
         <header className="App-header">
           <img src={banner} className="App-banner" alt="banner" />
         </header>
-        <Link to='/' onClick={this.logOut}>Log out</Link>
+        <Link to='/' onClick={this.signOut}>Sign out</Link>
         <Router />
       </div>
     );

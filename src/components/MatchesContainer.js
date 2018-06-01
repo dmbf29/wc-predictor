@@ -10,6 +10,7 @@ class MatchesContainer extends Component {
     this.state = {
       matches: []
     }
+    console.log(localStorage)
     if(localStorage.jwt === undefined) {
       this.props.history.push(`/sign_in`)
     }
