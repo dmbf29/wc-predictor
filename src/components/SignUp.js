@@ -12,7 +12,7 @@ class SignUp extends Component {
     const password = document.getElementById("password").value
     const password_confirmation = document.getElementById("password_confirmation").value
     axios.post(
-        'https://wc-predictor-api.herokuapp.com/api/v1/users',
+        'http://localhost:3001/api/v1/users',
         { user:
           {
             name: name,
@@ -25,7 +25,7 @@ class SignUp extends Component {
       .then(response => {
         console.log(response.data)
         axios.post(
-          'https://wc-predictor-api.herokuapp.com/api/v1/user_token',
+          'http://localhost:3001/api/v1/user_token',
           { auth:
             {
               email: email,
