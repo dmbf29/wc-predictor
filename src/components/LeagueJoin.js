@@ -19,6 +19,7 @@ class LeagueJoin extends Component {
     )
     .then(response => {
       console.log(response.data)
+      this.props.history.push(`/`)
     })
     .catch(error => console.log(error))
   }
