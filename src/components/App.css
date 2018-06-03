@@ -7,11 +7,12 @@
 
 .App-header {
   height: 25vh;
-  padding: 20px;
+  /*padding: 20px 0;*/
+  margin: 20px 10px;
   color: white;
   background: transparent;
-  background-image: url('./assets/banner.gif');
-  background-size: 40%;
+  background-image: url('./assets/banner.png');
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
