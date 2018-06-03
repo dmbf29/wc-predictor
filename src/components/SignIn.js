@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-// import banner from './assets/banner.gif';
-// import './App.css';
-// // import MatchesContainer from './MatchesContainer'
-// import Router from "./Router";
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
