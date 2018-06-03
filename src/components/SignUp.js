@@ -46,6 +46,7 @@ class SignUp extends Component {
     return (
       <div className="App">
         <div className="form-container">
+          <h3>Sign Up</h3>
           <form>
             <div className="form-group">
               <label htmlFor="name">Name</label>

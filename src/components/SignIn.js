@@ -41,6 +41,7 @@ class SignIn extends Component {
     return (
       <div className="App">
         <div className="form-container">
+          <h3>Sign In</h3>
           <form>
             <div className="form-group">
               <label htmlFor="email">Email</label>

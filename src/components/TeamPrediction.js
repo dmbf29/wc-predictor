@@ -2,13 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 class TeamPrediction extends Component {
-  constructor() {
-    super()
-    this.state = {
-      status: 'inactive'
-    }
-    console.log(this.props)
-  }
 
   updateActivePredictions = () => {
     const match_row = document.getElementById('match' + this.props.match.id)
