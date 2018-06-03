@@ -32,13 +32,13 @@ class LeaguesContainer extends Component {
             </div>
             <div className="user-tile user-sub">
               <div className="user-position user-sub-item">
-                  <p>Position</p>
+                  <p>POS</p>
                 </div>
               <div className="user-name user-sub-item">
-                <p>Name</p>
+                <p>NAME</p>
               </div>
               <div className="user-overall user-sub-item">
-                <p>Score</p>
+                <p>SCORE</p>
               </div>
             </div>
             {league.users.map((user, index) => (

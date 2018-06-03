@@ -32,6 +32,9 @@ a:focus {
   align-items: center;
   justify-content: space-between;
 }
+#navbar-wagon-menu {
+  margin-left: 15px;
+}
 #navbar-wagon-menu:hover {
   cursor: pointer;
 }
@@ -123,13 +126,16 @@ a:focus {
   justify-content: space-between;
 }
 .subnav-wagon-link {
-  color: white;
+  color: lightgray;
   font-size: 16px;
-  font-weight: lighter;
+  font-weight: normal;
 }
 .subnav-wagon-link:hover {
-  color: white;
+  color: #BD0B23;
   text-decoration: none;
+}
+.subnav-wagon-link:focus {
+  color: lightgray;
 }
 .subnav-mobile {
   color: white;
