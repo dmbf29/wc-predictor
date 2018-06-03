@@ -19,7 +19,7 @@ class LeagueCreate extends Component {
         {
           user_token: localStorage.jwt
         }
-      }, { headers: { 'Authorization': localStorage.token }}
+      }, { headers: { 'Authorization': localStorage.jwt }}
     )
     .then(response => {
       console.log(response.data)

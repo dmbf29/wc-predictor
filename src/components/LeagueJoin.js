@@ -15,7 +15,7 @@ class LeagueJoin extends Component {
           key: key,
           password: password
         }
-      }, { headers: { 'Authorization': localStorage.token }}
+      }, { headers: { 'Authorization': localStorage.jwt }}
     )
     .then(response => {
       console.log(response.data)
