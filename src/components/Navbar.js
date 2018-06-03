@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
   toggleDrop() {
-    console.log("clicked dropdown")
     const dropdown = document.querySelector(".dropdown-menu")
     if(dropdown.style.display === 'block') {
       dropdown.style.display = 'none'

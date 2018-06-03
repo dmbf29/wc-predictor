@@ -3,6 +3,17 @@
   text-align: center;
   color: #0f4583;
   font-family: 'Open Sans';
+  position: relative;
+}
+.doug {
+  position: absolute;
+  bottom: -38px;
+  right: 7px;
+  color: #AFAD90;
+}
+.doug:hover {
+  text-decoration: none;
+  color: #0f4583;
 }
 
 .App-header {

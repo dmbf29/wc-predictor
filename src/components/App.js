@@ -10,7 +10,6 @@ class App extends Component {
     this.state = {
       matches: []
     };
-    console.log(localStorage)
   }
 
   signIn () {
@@ -37,8 +36,6 @@ class App extends Component {
     axios.get('https://wc-predictor-api.herokuapp.com/api/v1/matches.json', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({matches: response.data.matches})
-      console.log(localStorage)
-      console.log(this.state)
     })
     .catch(error => console.log(error))
   }
@@ -50,6 +47,7 @@ class App extends Component {
         <header className="App-header">
         </header>
         <Router />
+        <a className="doug" href="mailto:douglasmberkley@gmail.com">douglasmberkley</a>
       </div>
     );
   }
