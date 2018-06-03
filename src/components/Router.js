@@ -11,6 +11,9 @@ import LeaguesContainer from "./LeaguesContainer";
 
 const Router = () => (
   <Switch>
+    { localStorage.jwt === undefined &&
+      <Route exact path="/" component={SignIn} />
+    }
     <Route exact path="/" component={MatchesContainer} />
     <Route exact path="/sign_in" component={SignIn} />
     <Route exact path="/sign_up" component={SignUp} />
