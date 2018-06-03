@@ -18,7 +18,7 @@ class GroupContainer extends Component {
 
   render() {
     return (
-      <div className="group-container">
+      <div className="group-container" id={this.props.group.name}>
         <div className="group-header">
           <h3>{this.props.group.name}</h3>
         </div>

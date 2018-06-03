@@ -4,6 +4,10 @@
   color: #0f4583;
   font-family: 'Open Sans';
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 95vh;
 }
 .doug {
   position: absolute;

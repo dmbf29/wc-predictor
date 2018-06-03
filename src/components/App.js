@@ -43,10 +43,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div>
         <Navbar />
         <header className="App-header">
         </header>
         <Router />
+        </div>
         <a className="doug" href="mailto:douglasmberkley@gmail.com">douglasmberkley</a>
       </div>
     );
