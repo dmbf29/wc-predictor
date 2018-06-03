@@ -10,6 +10,7 @@ class SignUp extends Component {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     const password_confirmation = document.getElementById("password_confirmation").value
+    const timezone = document.getElementById("timezone").value
     axios.post(
         'http://localhost:3001/api/v1/users',
         { user:
@@ -17,7 +18,8 @@ class SignUp extends Component {
             name: name,
             email: email,
             password: password,
-            password_confirmation: password_confirmation
+            password_confirmation: password_confirmation,
+            timezone: timezone
           }
         }
       )
@@ -62,6 +64,16 @@ class SignUp extends Component {
             <div className="form-group">
               <label htmlFor="password_confirmation">Confirm Password</label>
               <input type="password" className="form-control" id="password_confirmation" placeholder="Confirm Password" />
+            </div>
+            <div class="form-group">
+              <label for="timezone">Time zone</label>
+              <select class="form-control" id="timezone">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
             </div>
             <div className="form-group">
               <button className="red-button btn"
