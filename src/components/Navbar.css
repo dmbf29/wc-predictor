@@ -32,6 +32,9 @@ a:focus {
   align-items: center;
   justify-content: space-between;
 }
+#navbar-wagon-menu:hover {
+  cursor: pointer;
+}
 
 /* Navbar item */
 .navbar-wagon-item {

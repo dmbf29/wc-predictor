@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import banner from './assets/banner.png';
 import './App.css';
-// import MatchesContainer from './MatchesContainer'
 import Router from "./Router";
 import Navbar from "./Navbar";
 import axios from 'axios'
