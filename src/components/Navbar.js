@@ -35,9 +35,9 @@ class Navbar extends Component {
           <div className="dropdown">
             <img onClick={this.toggleDrop} src={avatar} className="avatar dropdown-toggle" alt="avatar" id="navbar-wagon-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
             <ul className="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><Link to='/league_join' className="dropdown-item">Join League</Link></li>
-              <li><Link to='/league_create' className="dropdown-item">Create League</Link></li>
-              <li><Link to='/' onClick={this.signOut} className="dropdown-item">Sign Out</Link></li>
+              <li><Link onClick={this.toggleDrop} to='/league_join' className="dropdown-item">Join League</Link></li>
+              <li><Link onClick={this.toggleDrop} to='/league_create' className="dropdown-item">Create League</Link></li>
+              <li><Link onClick={this.toggleDrop} to='/' onClick={this.signOut} className="dropdown-item">Sign Out</Link></li>
             </ul>
           </div>
         </div>
