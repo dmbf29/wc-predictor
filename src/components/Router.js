@@ -17,10 +17,18 @@ const Router = () => (
     <Route exact path="/" component={MatchesContainer} />
     <Route exact path="/sign_in" component={SignIn} />
     <Route exact path="/sign_up" component={SignUp} />
+    { localStorage.jwt === undefined &&
+      <Route exact path="/leagues" component={SignIn} />
+    }
     <Route exact path="/leagues" component={LeaguesContainer} />
+    { localStorage.jwt === undefined &&
+      <Route exact path="/league_create" component={SignIn} />
+    }
     <Route exact path="/league_create" component={LeagueCreate} />
+    { localStorage.jwt === undefined &&
+      <Route exact path="/league_join" component={SignIn} />
+    }
     <Route exact path="/league_join" component={LeagueJoin} />
-    <Route path="/store" component={NotFound} />
     <Route component={NotFound} />
   </Switch>
 );

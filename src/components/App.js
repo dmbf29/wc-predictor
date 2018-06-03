@@ -3,7 +3,6 @@ import './App.css';
 import Router from "./Router";
 import Navbar from "./Navbar";
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
 class App extends Component {
   constructor(props) {

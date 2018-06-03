@@ -7,9 +7,9 @@ class LeaguesContainer extends Component {
     super()
     this.state = {leagues: []}
     console.log(localStorage)
-    if(localStorage.jwt === undefined) {
-      this.props.history.push(`/sign_in`)
-    }
+    // if(localStorage.jwt === undefined) {
+    //   this.props.history.push(`/sign_in`)
+    // }
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get('http://localhost:3001/api/v1/leagues.json', { headers: { 'Authorization': token }})
     .then(response => {
