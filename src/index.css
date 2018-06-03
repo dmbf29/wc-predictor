@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'open-sans';
   /*background-image: url("symphony.png");*/
   background: #0f4583 url("symphony.png") repeat;
 }

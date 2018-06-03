@@ -1,0 +1,9 @@
+.group-header {
+  background: #0f4583 url('./fwc_darkbluebg.png') repeat;
+  color: white;
+  padding: 15px;
+  margin: 0 -20px;
+}
+.group-header h3 {
+  margin: 0;
+}
