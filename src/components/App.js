@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import banner from './assets/banner.gif';
+import banner from './assets/banner.png';
 import './App.css';
 // import MatchesContainer from './MatchesContainer'
 import Router from "./Router";
+import Navbar from "./Navbar";
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -13,11 +14,6 @@ class App extends Component {
       matches: []
     };
     console.log(localStorage)
-  }
-
-  signOut() {
-    delete localStorage.jwt
-    this.props.history.push(`/`)
   }
 
   signIn () {
@@ -53,10 +49,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar />
         <header className="App-header">
-          <img src={banner} className="App-banner" alt="banner" />
         </header>
-        <Link to='/' onClick={this.signOut}>Sign out</Link>
         <Router />
       </div>
     );
