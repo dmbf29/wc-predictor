@@ -126,7 +126,7 @@ a:focus {
   justify-content: space-between;
 }
 .subnav-wagon-link {
-  color: lightgray;
+  color: #EDEDED;
   font-size: 16px;
   font-weight: normal;
 }
@@ -135,7 +135,7 @@ a:focus {
   text-decoration: none;
 }
 .subnav-wagon-link:focus {
-  color: lightgray;
+  color: #EDEDED;
 }
 .subnav-mobile {
   color: white;
