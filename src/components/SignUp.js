@@ -7,7 +7,6 @@ const timezones = ["Hawaii", "Alaska", "Pacific Time (US & Canada)", "Arizona", 
 class SignUp extends Component {
 
   signUp(event) {
-    console.log(event)
     event.preventDefault();
     const name = document.getElementById("name").value
     const email = document.getElementById("email").value
