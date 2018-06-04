@@ -8,15 +8,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      matches: []
+      matches: [],
     };
+    if(process.env.NODE_ENV !== 'production') {
+      localStorage.setItem("url", 'http://localhost:3001')
+    } else {
+      localStorage.setItem("url", 'https://wc-predictor.herokuapp.com/')
+    }
+    console.log(localStorage.url)
   }
 
   signIn () {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     axios.post(
-        'https://wc-predictor-api.herokuapp.com/api/v1/user_token',
+        localStorage.url + '/api/v1/user_token',
         { auth:
           {
             email: email,
@@ -33,7 +39,7 @@ class App extends Component {
 
   getMatches () {
     let token = "Bearer " + localStorage.getItem("jwt")
-    axios.get('https://wc-predictor-api.herokuapp.com/api/v1/matches.json', { headers: { 'Authorization': token }})
+    axios.get(localStorage.url + '/api/v1/matches.json', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({matches: response.data.matches})
     })

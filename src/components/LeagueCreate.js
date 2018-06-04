@@ -8,7 +8,7 @@ class LeagueCreate extends Component {
     const name = document.getElementById("name").value
     const password = document.getElementById("password").value
     axios.post(
-      'http://localhost:3001/api/v1/leagues',
+      localStorage.url + '/api/v1/leagues',
       { league:
         {
           name: name,
@@ -31,7 +31,7 @@ class LeagueCreate extends Component {
     return (
       <div className="App">
         <div className="form-container">
-          <h3>Create a League</h3>
+          <h3>CREATE A LEAGUE</h3>
           <form>
             <div className="form-group">
               <label htmlFor="name">Name</label>

@@ -7,12 +7,8 @@ class MatchesContainer extends Component {
   constructor() {
     super()
     this.state = {groups: []}
-    // console.log(localStorage)
-    // if(localStorage.jwt === undefined) {
-    //   this.props.history.push(`/sign_in`)
-    // }
     let token = "Bearer " + localStorage.getItem("jwt")
-    axios.get('http://localhost:3001/api/v1/groups.json', { headers: { 'Authorization': token }})
+    axios.get(localStorage.url + '/api/v1/groups.json', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({groups: response.data.groups, token: token})
     })

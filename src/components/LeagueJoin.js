@@ -8,7 +8,7 @@ class LeagueJoin extends Component {
     const key = document.getElementById("key").value
     const password = document.getElementById("password").value
     axios.post(
-      'http://localhost:3001/api/v1/memberships',
+      localStorage.url + '/api/v1/memberships',
       { league:
         {
           key: key,
@@ -27,7 +27,7 @@ class LeagueJoin extends Component {
     return (
       <div className="App">
         <div className="form-container">
-          <h3>Join a League</h3>
+          <h3>JOIN A LEAGUE</h3>
           <form>
             <div className="form-group">
               <label htmlFor="key">Key</label>

@@ -17,7 +17,7 @@ class SignIn extends Component {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     axios.post(
-        'http://localhost:3001/api/v1/user_token',
+        localStorage.url + '/api/v1/user_token',
         { auth:
           {
             email: email,
@@ -37,7 +37,7 @@ class SignIn extends Component {
     return (
       <div className="App">
         <div className="form-container">
-          <h3>Sign In</h3>
+          <h3>SIGN IN</h3>
           <form>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -47,14 +47,14 @@ class SignIn extends Component {
               <label htmlFor="password">Password</label>
               <input type="password" className="form-control" id="password" placeholder="Password" />
             </div>
-            <div className="form-group">
+            <div className="form-buttons" >
               <button className="red-button btn"
                 onClick={this.signIn.bind(this)}
               >
                   Sign In
               </button>
+              <Link to='/sign_up'>Sign up</Link>
             </div>
-            <Link to='/sign_up'>Sign up</Link>
           </form>
         </div>
       </div>

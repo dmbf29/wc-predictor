@@ -44,6 +44,16 @@
   font-size: large;
 }
 
+form {
+  min-width: 350px;
+}
+
+.timezone-picker {
+  width: 100%;
+}
+.timezone-picker-textfield {
+  background-color: white;
+}
 .form-container {
   margin: 20px 0 100px 0;
   display: flex;
@@ -61,7 +71,7 @@
   color: white;
 }
 .form-container label {
-  color: white;
+  color: #EDEDED;
 }
 
 .form-container a:hover {
@@ -72,11 +82,16 @@
 .red-button {
   background-color: #B40B22;
   color: white;
+  margin: 10px 0;
 }
 
 .blue-button {
   background-color: #0f4583;
   color: white;
+}
+.form-buttons {
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes App-logo-spin {

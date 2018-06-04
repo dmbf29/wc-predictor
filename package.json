@@ -8,6 +8,7 @@
     "immutability-helper": "^2.7.0",
     "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
+    "react-bootstrap-timezone-picker": "^1.0.12",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4"

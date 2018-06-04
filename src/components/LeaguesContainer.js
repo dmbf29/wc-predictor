@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './LeaguesContainer.css';
+import { Link } from 'react-router-dom'
 
 class LeaguesContainer extends Component {
   constructor() {
     super()
     this.state = {leagues: []}
     console.log(localStorage)
-    // if(localStorage.jwt === undefined) {
-    //   this.props.history.push(`/sign_in`)
-    // }
     let token = "Bearer " + localStorage.getItem("jwt")
-    axios.get('http://localhost:3001/api/v1/leagues.json', { headers: { 'Authorization': token }})
+    axios.get(localStorage.url + '/api/v1/leagues.json', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({leagues: response.data.leagues, token: token})
       console.log(this.state.leagues)
@@ -25,6 +23,9 @@ class LeaguesContainer extends Component {
   render() {
     return (
       <div className="matches-container">
+        { this.state.leagues.length === 0 &&
+            <Link className="red-button btn" to='/league_create'>Create a League</Link>
+        }
         {this.state.leagues.map(league => (
           <div className="league-container" key={league.id}>
             <div className="group-header">
