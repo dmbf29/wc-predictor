@@ -7,6 +7,9 @@
 .group-header h3 {
   margin: 0;
 }
+.group-header small {
+  color: lightgray;
+}
 
 @media only screen and (max-width : 480px) {
   .group-header {

@@ -37,6 +37,7 @@ class LeaguesContainer extends Component {
           <div className="league-container" key={league.id}>
             <div className="group-header">
               <h3>{league.name}</h3>
+              <small>key: {league.key} | pass: {league.password}</small>
             </div>
             <div className="user-tile user-sub">
               <div className="user-position user-sub-item">
