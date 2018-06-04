@@ -40,8 +40,7 @@ class DrawPrediction extends Component {
             winner_id: null,
             loser_id: null,
             match_id: this.props.match.id,
-            round_id: this.props.match.round.id,
-            user_id: 1
+            round_id: this.props.match.round.id
           }
         },
         { headers: { 'Authorization': this.props.token }}
@@ -62,8 +61,7 @@ class DrawPrediction extends Component {
             winner_id: null,
             loser_id: null,
             match_id: this.props.match.id,
-            round_id: this.props.match.round.id,
-            user_id: 1
+            round_id: this.props.match.round.id
           }
         },
         { headers: { 'Authorization': this.props.token }}

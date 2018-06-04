@@ -28,8 +28,8 @@ class Navbar extends Component {
         <div className="subnav-wagon">
           { localStorage.jwt === undefined &&
             <div>
-              <Link to='/sign_in' onClick={this.toggleDrop} className="subnav-wagon-item subnav-wagon-link subnav-spacing subnav-border-right">SIGN IN</Link>
-              <Link to='/sign_up' onClick={this.toggleDrop} className="subnav-wagon-item subnav-wagon-link subnav-spacing subnav-border-right">SIGN UP</Link>
+              <Link to='/sign_in' className="subnav-wagon-item subnav-wagon-link subnav-spacing subnav-border-right">SIGN IN</Link>
+              <Link to='/sign_up' className="subnav-wagon-item subnav-wagon-link subnav-spacing subnav-border-right">SIGN UP</Link>
             </div>
           }
           { localStorage.jwt !== undefined &&

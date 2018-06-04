@@ -32,8 +32,7 @@ class TeamPrediction extends Component {
             winner_id: this.props.team.id,
             match_id: this.props.match.id,
             round_id: this.props.match.round.id,
-            draw: false,
-            user_id: 1
+            draw: false
           }
         },
         { headers: { 'Authorization': this.props.token }}
@@ -54,8 +53,7 @@ class TeamPrediction extends Component {
             loser_id: null,
             match_id: this.props.match.id,
             round_id: this.props.match.round.id,
-            draw: false,
-            user_id: 1
+            draw: false
           }
         },
         { headers: { 'Authorization': this.props.token }}

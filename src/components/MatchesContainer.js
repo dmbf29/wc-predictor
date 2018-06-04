@@ -11,6 +11,7 @@ class MatchesContainer extends Component {
     axios.get(localStorage.url + '/api/v1/groups.json', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({groups: response.data.groups, token: token})
+      console.log(this.state)
     })
     .catch(error => console.log(error))
   }
