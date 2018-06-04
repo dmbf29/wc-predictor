@@ -24,7 +24,14 @@ class LeaguesContainer extends Component {
     return (
       <div className="matches-container">
         { this.state.leagues.length === 0 &&
+          <div className="container">
+          <div className="row" style={{justifyContent: 'center'}}>
+          <div className="form-buttons col-xs-offset-3 col-xs-offset-6">
             <Link className="red-button btn" to='/league_create'>Create a League</Link>
+            <Link className="red-button btn" to='/league_join'>Join a League</Link>
+          </div>
+          </div>
+          </div>
         }
         {this.state.leagues.map(league => (
           <div className="league-container" key={league.id}>
