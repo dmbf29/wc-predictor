@@ -10,10 +10,9 @@ class App extends Component {
     this.state = {
       matches: [],
     };
+    localStorage.setItem("url", 'https://wc-predictor.herokuapp.com/')
     if(process.env.NODE_ENV !== 'production') {
       localStorage.setItem("url", 'http://localhost:3001')
-    } else {
-      localStorage.setItem("url", 'https://wc-predictor.herokuapp.com/')
     }
     console.log(localStorage.url)
   }
