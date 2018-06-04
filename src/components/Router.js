@@ -8,6 +8,7 @@ import SignIn from "./SignIn";
 import LeagueCreate from "./LeagueCreate";
 import LeagueJoin from "./LeagueJoin";
 import LeaguesContainer from "./LeaguesContainer";
+import Account from "./Account";
 
 const Router = () => (
   <Switch>
@@ -29,6 +30,10 @@ const Router = () => (
       <Route exact path="/league_join" component={SignIn} />
     }
     <Route exact path="/league_join" component={LeagueJoin} />
+    { localStorage.jwt === undefined &&
+      <Route exact path="/account" component={SignIn} />
+    }
+    <Route exact path="/account" component={Account} />
     <Route component={NotFound} />
   </Switch>
 );
