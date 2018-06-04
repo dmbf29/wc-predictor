@@ -22,6 +22,9 @@
 .match-info {
   flex: 1;
 }
+.match-info strong {
+  font-family: 'Dusha V5';
+}
 
 .flag-box {
   padding: 10px 5px;
