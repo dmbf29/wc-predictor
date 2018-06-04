@@ -46,7 +46,7 @@ class TeamPrediction extends Component {
     }
     const updatePrediction = (prediction_id) => {
       axios.post(
-        `http://localhost:3001/api/v1/predictions/${prediction_id}`,
+        localStorage.url + `/api/v1/predictions/${prediction_id}`,
         { prediction:
           {
             winner_id: this.props.team.id,
