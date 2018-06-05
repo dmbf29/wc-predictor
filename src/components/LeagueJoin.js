@@ -20,7 +20,15 @@ class LeagueJoin extends Component {
       console.log(response.data)
       this.props.history.push(`/leagues`)
     })
-    .catch(error => console.log(error))
+    .catch(error => {console.log(error)
+      this.addErrors();
+    })
+  }
+
+  addErrors() {
+    console.log("sign in error!")
+    const form = document.querySelector("form");
+    form.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>Incorrect key/password</small>");
   }
 
   render() {

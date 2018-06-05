@@ -11,10 +11,28 @@ class Account extends Component {
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + `/api/v1/user`, { headers: { 'Authorization': token }})
     .then(response => {
-      console.log(response)
+      console.log(response.data)
+      console.log(response.data.user)
+      console.log(response.data.user.notify)
       this.setState({user: response.data, token: token})
+      const name = document.getElementById("name")
+      const email = document.getElementById("email")
+      const password = document.getElementById("password")
+      const password_confirmation = document.getElementById("password_confirmation")
+      const timezone = document.getElementById("timezone")
+      const notify = document.getElementById("notify")
+      name.value = response.data.user.name
+      email.insertAdjacentHTML('beforeend', `<p style='color:white;'>${response.data.user.email}</p>`);
+      timezone.value = response.data.user.timezone
+      notify.checked = (response.data.user.notify === true ? 'true' : 'false')
     })
     .catch(error => console.log(error))
+  }
+
+  addErrors() {
+    console.log("sign in error!")
+    const form = document.querySelector("form");
+    form.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>Error updating account. Check input fields.</small>");
   }
 
   updateUser(event) {
@@ -43,7 +61,9 @@ class Account extends Component {
         console.log(response)
         this.props.history.push(`/`)
       })
-      .catch(error => console.log(error))
+      .catch(error => {console.log(error)
+        this.addErrors();
+      })
   }
 
 render() {
@@ -52,13 +72,10 @@ render() {
         <div className="form-container">
           <h3>EDIT ACCOUNT</h3>
           <form>
+            <div id="email"></div>
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input type="text" className="form-control" id="name" aria-describedby="emailHelp" value={this.state.user.name} />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input type="email" className="form-control" id="email" aria-describedby="emailHelp" value={this.state.user.email} />
+              <input type="text" className="form-control" id="name" aria-describedby="nameHelp" defaultValue={this.state.user.name} />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>

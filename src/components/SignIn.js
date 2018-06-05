@@ -17,20 +17,28 @@ class SignIn extends Component {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     axios.post(
-        localStorage.url + '/api/v1/user_token',
-        { auth:
-          {
-            email: email,
-            password: password
-          }
+      localStorage.url + '/api/v1/user_token',
+      { auth:
+        {
+          email: email,
+          password: password
         }
-      )
-      .then(response => {
-        console.log(response)
-        localStorage.setItem("jwt", response.data.jwt)
-        this.props.history.push(`/`)
-      })
-      .catch(error => console.log(error))
+      }
+    )
+    .then(response => {
+      console.log(response)
+      localStorage.setItem("jwt", response.data.jwt)
+      this.props.history.push(`/`)
+    })
+    .catch(error => {console.log(error)
+      this.addErrors();
+    })
+  }
+
+  addErrors() {
+    console.log("sign in error!")
+    const form = document.querySelector("form");
+    form.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>Incorrect username/password</small>");
   }
 
   render() {

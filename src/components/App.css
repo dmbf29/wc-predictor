@@ -80,6 +80,10 @@ form {
   text-decoration: none;
 }
 
+.form-container small {
+  color: #EC0B2B;
+}
+
 .red-button {
   background-color: #B40B22;
   color: white;

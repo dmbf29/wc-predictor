@@ -42,10 +42,28 @@ class SignUp extends Component {
           localStorage.setItem("jwt", response.data.jwt)
           this.props.history.push(`/`)
         })
-        .catch(error => console.log(error))
+        .catch(error => {console.log(error)
+          this.addInErrors();
+        })
       })
-      .catch(error => console.log(error))
+      .catch(error => {console.log(error)
+        this.addUpErrors();
+      })
+    }
+
+  addUpErrors() {
+    console.log("sign in error!")
+    const form = document.querySelector("form");
+    form.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>Error creating account. Check input fields.</small>");
   }
+
+  addInErrors() {
+    console.log("sign in error!")
+    const form = document.querySelector("form");
+    form.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>Error signing in</small>");
+  }
+
+
 
   render() {
     return (

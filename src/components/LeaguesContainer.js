@@ -37,7 +37,7 @@ class LeaguesContainer extends Component {
           <div className="league-container" key={league.id}>
             <div className="league-header">
               <h3>{league.name}</h3>
-              <small>key: {league.key} | pass: {league.password}</small>
+              <small>key: {league.key} | password: {league.password}</small>
             </div>
             <table className="table table-hover">
               <thead className="user-sub">
