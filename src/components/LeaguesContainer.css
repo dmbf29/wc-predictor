@@ -1,20 +1,40 @@
+.league-container th {
+  padding: 5px;
+  border-top: none;
+}
+
+.league-container table {
+  border: none;
+}
+
+.league-header {
+  background: #0f4583 url('./fwc_darkbluebg.png') repeat;
+  color: white;
+  padding: 10px;
+  /*margin: 0 -20px;*/
+  font-family: 'Dusha V5';
+}
+.league-header h3 {
+  margin: 0;
+}
+.league-header small {
+  color: lightgray;
+}
+
 .user-tile {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 -20px;
+  /*margin: 0 -20px;*/
 }
 
 .user-sub {
   background-color: #B40B22;
-  /*margin: 0 -20px;*/
   color: white;
-  font-weight: lighter;
   padding: 5px 0;
   font-family: 'Dusha V5';
 }
 .user-sub-item {
-  /*padding: 0px 10px;*/
   flex: 1;
 }
 

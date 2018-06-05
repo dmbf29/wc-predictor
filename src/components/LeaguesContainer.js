@@ -22,7 +22,7 @@ class LeaguesContainer extends Component {
 
   render() {
     return (
-      <div className="matches-container">
+      <div>
         { this.state.leagues.length === 0 &&
           <div className="container">
           <div className="row" style={{justifyContent: 'center'}}>
@@ -35,34 +35,30 @@ class LeaguesContainer extends Component {
         }
         {this.state.leagues.map(league => (
           <div className="league-container" key={league.id}>
-            <div className="group-header">
+            <div className="league-header">
               <h3>{league.name}</h3>
               <small>key: {league.key} | pass: {league.password}</small>
             </div>
-            <div className="user-tile user-sub">
-              <div className="user-position user-sub-item">
-                  <p>POS</p>
-                </div>
-              <div className="user-name user-sub-item">
-                <p>NAME</p>
-              </div>
-              <div className="user-overall user-sub-item">
-                <p>SCORE</p>
-              </div>
-            </div>
-            {league.users.map((user, index) => (
-              <div className="user-tile" key={user.id}>
-                <div className="user-position user-tile-item ">
-                  <p>{index + 1}</p>
-                </div>
-                <div className="user-name user-tile-item ">
-                  <p>{user.name}</p>
-                </div>
-                <div className="user-overall user-tile-item ">
-                  <p>{user.score}</p>
-                </div>
-              </div>
-            ))}
+            <table class="table table-hover">
+              <thead class="user-sub">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">NAME</th>
+                  <th scope="col">PICKS</th>
+                  <th scope="col">SCORE</th>
+                </tr>
+              </thead>
+              <tbody>
+                {league.users.map((user, index) => (
+                  <tr>
+                    <td scope="row">{index + 1}</td>
+                    <td>{user.name}</td>
+                    <td># / 48</td>
+                    <td>{user.score}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         ))}
       </div>
