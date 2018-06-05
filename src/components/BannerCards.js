@@ -23,7 +23,7 @@ const BannerCards = () => (
         <h5>Create/Join a League</h5>
       </div>
       <div className="home-step-content">
-        <p>Join in with your friends and compete for the highest score.</p>
+        <p>Join in with friends and compete for the highest score.</p>
       </div>
     </div>
     <div className="home-step">
@@ -34,7 +34,7 @@ const BannerCards = () => (
         <h5>Come Out on Top</h5>
       </div>
       <div className="home-step-content">
-        <p>Compete against all of the users in the overall leaderboard.</p>
+        <p>Compete against all users in the overall leaderboard.</p>
       </div>
     </div>
   </div>
