@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './MatchesContainer.css';
 import GroupContainer from './GroupContainer'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/fontawesome-free-solid'
 
 class MatchesContainer extends Component {
   constructor() {
@@ -22,6 +24,11 @@ class MatchesContainer extends Component {
   render() {
     return (
       <div className="matches-container">
+        {this.state.groups === null &&
+          <div className="container">
+            <h1><FontAwesomeIcon icon={faClock} /></h1>
+          </div>
+        }
         {this.state.groups.map(group => (
           <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} />
         ))}

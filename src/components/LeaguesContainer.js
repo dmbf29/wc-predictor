@@ -39,8 +39,8 @@ class LeaguesContainer extends Component {
               <h3>{league.name}</h3>
               <small>key: {league.key} | pass: {league.password}</small>
             </div>
-            <table class="table table-hover">
-              <thead class="user-sub">
+            <table className="table table-hover">
+              <thead className="user-sub">
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">NAME</th>
@@ -50,10 +50,10 @@ class LeaguesContainer extends Component {
               </thead>
               <tbody>
                 {league.users.map((user, index) => (
-                  <tr>
+                  <tr key={user.id}>
                     <td scope="row">{index + 1}</td>
                     <td>{user.name}</td>
-                    <td># / 48</td>
+                    <td>{user.picks} / 48</td>
                     <td>{user.score}</td>
                   </tr>
                 ))}
