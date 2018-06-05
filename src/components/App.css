@@ -141,4 +141,7 @@ form {
   .home-step-image {
     font-size: 3em;
   }
+  form {
+    min-width: 250px;
+  }
 }
