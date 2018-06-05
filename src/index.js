@@ -9,7 +9,7 @@ import Favicon from 'react-favicon';
 
 ReactDOM.render((
   <div>
-    <Favicon src="https://raw.githubusercontent.com/dmbf29/wc-predictor/master/public/favicon.ico" />
+    <Favicon url="http://res.cloudinary.com/dmbf29/image/upload/v1528177294/favicon_ciov6y.png" />
     <BrowserRouter>
       <App />
     </BrowserRouter>
