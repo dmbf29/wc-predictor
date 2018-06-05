@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import BannerCards from './BannerCards'
 
 class SignIn extends Component {
   constructor(props) {
@@ -65,6 +66,7 @@ class SignIn extends Component {
             </div>
           </form>
         </div>
+        <BannerCards />
       </div>
     );
   }
