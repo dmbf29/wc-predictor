@@ -72,7 +72,7 @@ form {
   font-family: 'Dusha V5';
 }
 .form-container label {
-  color: #EDEDED;
+  color: #EDEDED; /* gray1 */
 }
 
 .form-container a:hover {
