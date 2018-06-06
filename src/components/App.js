@@ -54,7 +54,7 @@ class App extends Component {
         </header>
         <Router />
         </div>
-        <a className="doug" href="mailto:douglasmberkley@gmail.com">douglasmberkley</a>
+        <a className="doug" href="mailto:douglasmberkley@gmail.com">dberkley</a>
       </div>
     );
   }
