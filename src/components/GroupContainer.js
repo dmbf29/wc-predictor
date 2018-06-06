@@ -26,7 +26,7 @@ class GroupContainer extends Component {
           <div className="match-tile" id={'match' + match.id} key={match.id} >
             <div className="match-info">
               <p><strong>{match.team_home.name} vs. {match.team_away.name}</strong></p>
-              <small>Fifa Rank | {match.team_home.ranking} vs. {match.team_away.ranking}</small>
+              <small><span className="fifa-rank">Fifa Rank | </span>{match.team_home.ranking} vs. {match.team_away.ranking}</small>
               <p><em>{match.kickoff_time}</em></p>
             </div>
             <div className="flag-group">

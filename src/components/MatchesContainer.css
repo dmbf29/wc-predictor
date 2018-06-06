@@ -71,6 +71,9 @@
   .match-tile {
     margin: 20px 0;
   }
+  .fifa-rank {
+    display: none;
+  }
 }
 
 @media only screen and (max-width : 320px) {
@@ -80,6 +83,9 @@
   .flag-group {
     flex-direction: column;
     flex: 1;
+  }
+  .fifa-rank {
+    display: block;
   }
 }
 
