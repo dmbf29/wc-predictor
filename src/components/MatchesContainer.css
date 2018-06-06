@@ -72,3 +72,14 @@
     margin: 20px 0;
   }
 }
+
+@media only screen and (max-width : 320px) {
+  .match-info {
+    flex: 2;
+  }
+  .flag-group {
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
