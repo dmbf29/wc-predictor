@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      matches: [],
+      matches: []
     };
     localStorage.setItem("url", 'https://wc-predictor-api.herokuapp.com')
     if(process.env.NODE_ENV !== 'production') {
@@ -36,25 +36,16 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
-  getMatches () {
-    let token = "Bearer " + localStorage.getItem("jwt")
-    axios.get(localStorage.url + '/api/v1/matches.json', { headers: { 'Authorization': token }})
-    .then(response => {
-      this.setState({matches: response.data.matches})
-    })
-    .catch(error => console.log(error))
-  }
-
   render() {
     return (
       <div className="App">
         <div>
-        <Navbar />
-        <header className="App-header">
-        </header>
-        <Router />
+          <Navbar />
+          <header className="App-header">
+          </header>
+          <Router />
         </div>
-        <a className="doug" href="mailto:douglasmberkley@gmail.com">douglasmberkley</a>
+        <a className="doug" href="mailto:douglasmberkley@gmail.com">douglas</a>
       </div>
     );
   }

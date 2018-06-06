@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './LeaguesContainer.css';
 import { Link } from 'react-router-dom'
+import LeaguePredictionsContainer from "./LeaguePredictionsContainer";
 
 class LeaguesContainer extends Component {
   constructor() {
@@ -59,6 +60,7 @@ class LeaguesContainer extends Component {
                 ))}
               </tbody>
             </table>
+            <LeaguePredictionsContainer />
           </div>
         ))}
       </div>
