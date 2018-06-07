@@ -8,17 +8,12 @@ import { faClock } from '@fortawesome/fontawesome-free-solid'
 class OtherMatchesContainer extends Component {
   constructor() {
     super()
-    this.state = {otherGroups: [], currentUser: null}
+    this.state = {otherGroups: [], currentUser: null, canEdit: "false"}
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + `/api/v1/user`, { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({currentUser: response.data.user, token: token})
-      const userId = this.props.match.params.userId
-      console.log("userId")
-      console.log(userId)
-      console.log("currentUser")
-      console.log(this.state.currentUser.id )
-      console.log(this.state.currentUser.id == this.props.match.params.userId)
+      this.setState({canEdit: this.state.currentUser.id == this.props.match.params.userId})
     })
     .catch(error => console.log(error))
   }
@@ -43,7 +38,7 @@ class OtherMatchesContainer extends Component {
           </div>
         }
         {this.state.otherGroups.map(group => (
-          <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} canEdit={ this.state.currentUser.id === this.props.match.params.userId ? "true" : "false"} />
+          <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} canEdit={ this.state.canEdit === true ? "true" : "false"} />
         ))}
       </div>
     )
