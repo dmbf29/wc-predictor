@@ -31,13 +31,13 @@ class GroupContainer extends Component {
             </div>
             <div className="flag-group">
               <div className="match-home match-team">
-                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} />
+                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} canEdit={this.props.canEdit} />
               </div>
               <div className="match-away match-team">
-                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_away} />
+                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_away} canEdit={this.props.canEdit} />
               </div>
               <div className="match-draw match-team">
-                <DrawPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} />
+                <DrawPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} canEdit={this.props.canEdit} />
               </div>
             </div>
           </div>

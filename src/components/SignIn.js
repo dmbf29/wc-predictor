@@ -27,6 +27,7 @@ class SignIn extends Component {
       }
     )
     .then(response => {
+      console.log("response->")
       console.log(response)
       localStorage.setItem("jwt", response.data.jwt)
       this.props.history.push(`/`)

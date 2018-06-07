@@ -20,6 +20,10 @@ class LeaguesContainer extends Component {
   componentDidMount() {
   }
 
+  visitPredictions(userId) {
+    this.props.history.push(`/predictions/${userId}`)
+  }
+
   render() {
     return (
       <div>
@@ -50,7 +54,7 @@ class LeaguesContainer extends Component {
               </thead>
               <tbody>
                 {league.users.map((user, index) => (
-                  <tr key={user.id}>
+                  <tr key={user.id} onClick={() => { this.visitPredictions(user.id) }}>
                     <td scope="row">{index + 1}</td>
                     <td>{user.name}</td>
                     <td>{user.picks} / 48</td>
