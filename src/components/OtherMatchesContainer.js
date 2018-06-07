@@ -8,12 +8,12 @@ import { faClock } from '@fortawesome/fontawesome-free-solid'
 class OtherMatchesContainer extends Component {
   constructor() {
     super()
-    this.state = {otherGroups: [], currentUser: null, canEdit: "false"}
+    this.state = {otherGroups: [], currentUser: {name: ""}, canEdit: "false"}
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + `/api/v1/user`, { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({currentUser: response.data.user, token: token})
-      this.setState({canEdit: this.state.currentUser.id == this.props.match.params.userId})
+      this.setState({canEdit: this.state.currentUser.id == this.props.match.params.userId, userName: this.props.match.params.userName})
     })
     .catch(error => console.log(error))
   }
@@ -31,15 +31,20 @@ class OtherMatchesContainer extends Component {
 
   render() {
     return (
-      <div className="matches-container">
-        {this.state.groups === null &&
-          <div className="container">
-            <h1><FontAwesomeIcon icon={faClock} /></h1>
-          </div>
-        }
-        {this.state.otherGroups.map(group => (
-          <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} canEdit={ this.state.canEdit === true ? "true" : "false"} />
-        ))}
+      <div>
+        <div className="user-header">
+          <h3>{this.state.userName}</h3>
+        </div>
+        <div className="matches-container">
+          {this.state.groups === null &&
+            <div className="container">
+              <h1><FontAwesomeIcon icon={faClock} /></h1>
+            </div>
+          }
+          {this.state.otherGroups.map(group => (
+            <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} canEdit={ this.state.canEdit === true ? "true" : "false"} />
+          ))}
+        </div>
       </div>
     )
   }

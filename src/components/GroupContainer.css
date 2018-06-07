@@ -12,6 +12,14 @@
   color: lightgray;
 }
 
+.user-header {
+  background: #0f4583 url('./fwc_darkbluebg.png') repeat;
+  color: #B40B22;
+  padding: 15px;
+  margin: 0 -20px;
+  font-family: 'Dusha V10';
+}
+
 @media only screen and (max-width : 480px) {
   .group-header {
     padding: 10px;

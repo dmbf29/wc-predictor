@@ -35,9 +35,9 @@ const Router = () => (
     }
     <Route exact path="/account" component={Account} />
     { localStorage.jwt === undefined &&
-      <Route exact path="/predictions/:userId" component={SignIn} />
+      <Route exact path="/predictions/:userId/:userName" component={SignIn} />
     }
-    <Route exact path="/predictions/:userId" component={OtherMatchesContainer} />
+    <Route exact path="/predictions/:userId/:userName" component={OtherMatchesContainer} />
     <Route component={NotFound} />
   </Switch>
 );
