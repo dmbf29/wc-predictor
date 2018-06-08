@@ -19,25 +19,16 @@ class LeaguePredictionsContainer extends Component {
   }
 
   openPredictionsContainer(groupId) {
-    // remove hidden from container
     const hiddenDiv = document.querySelector('.active-tab');
-    // if (hiddenDiv) {
-    //   hiddenDiv.classList.remove('default-hidden');
-    // }
-    hiddenDiv.classList.remove('active-tab');
+    if (hiddenDiv) {
+      hiddenDiv.classList.remove('active-tab');
+    }
     const newDiv = document.querySelector(`.tab-${this.props.league.id}-${groupId}`);
     newDiv.classList.add('active-tab');
-    // get group name
-    console.log(groupId)
-    // get matches for that group
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + `/api/v1/leagues/` + this.props.league.id + `/groups/` + groupId, { headers: { 'Authorization': token }})
     .then(response => {
-      console.log(response.data.league_groups)
       this.setState({matches: response.data.league_groups})
-      // store the group matches in matches
-      // store the group in the state
-      // console.log(this.state.leagues)
     })
     .catch(error => console.log(error))
   }
@@ -47,7 +38,7 @@ class LeaguePredictionsContainer extends Component {
       <div>
         <div className="group-tabs">
           { this.props.groups && this.props.groups.map((group, index) => (
-            <div className={`group-tab tab-${this.props.league.id}-${group.id} ` + (index === 0 ? "active-tab" : "") } key={group.id} onClick={() => { this.openPredictionsContainer(group.id) }}>
+            <div className={`group-tab tab-${this.props.league.id}-${group.id} ` } key={group.id} onClick={() => { this.openPredictionsContainer(group.id) }}>
               <h6>{group.name.split(' ')[1]}</h6>
             </div>
           ))}

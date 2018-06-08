@@ -15,7 +15,7 @@
 .predictions-teams {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   border-right: 1px #C4C6CB solid;
   /*border-left: 1px blue solid;*/
 }
@@ -23,15 +23,22 @@
 .predictions-team {
   flex: 1;
   overflow: hidden;
+  padding: 5px 2px
 }
 
 .predictions-header {
   background-color: #0f4583;
   color: white;
-  padding: 3px;
+  padding: 7px 3px;
 }
 
 .active-tab {
-  background-color: #0f4583;
+  background: #0f4583 url('./fwc_darkbluebg.png') repeat;
   color: #EDEDED;
+}
+
+@media only screen and (max-width :800px) {
+  .match-predictions-container {
+    display: block;
+  }
 }
