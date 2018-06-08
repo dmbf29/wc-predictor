@@ -44,6 +44,10 @@
 
 @media only screen and (max-width :800px) {
   .match-predictions-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+  }
+  .match-predictions {
+    width: 100%;
   }
 }
