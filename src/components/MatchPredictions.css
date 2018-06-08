@@ -1,22 +1,27 @@
 .match-predictions-container {
-  display: flex;
+  display: table;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: baseline;
   font-size: 12px;
   background-color: transparent;
+  width: 100%;
 }
 .match-predictions-container p {
   margin: 0;
 }
 .match-predictions {
   flex: 1;
+  border-right: 1px solid #c4c6cb;
+  height: 100%;
+  display: table-cell;
+  width: 16.7%;
 }
 
 .predictions-teams {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border-right: 1px #C4C6CB solid;
+  /*border-right: 1px #C4C6CB solid;*/
   /*border-left: 1px blue solid;*/
 }
 
