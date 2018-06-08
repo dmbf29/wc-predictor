@@ -1,0 +1,37 @@
+.match-predictions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+  background-color: transparent;
+}
+.match-predictions-container p {
+  margin: 0;
+}
+.match-predictions {
+  flex: 1;
+}
+
+.predictions-teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 1px #C4C6CB solid;
+  /*border-left: 1px blue solid;*/
+}
+
+.predictions-team {
+  flex: 1;
+  overflow: hidden;
+}
+
+.predictions-header {
+  background-color: #0f4583;
+  color: white;
+  padding: 3px;
+}
+
+.active-tab {
+  background-color: #0f4583;
+  color: #EDEDED;
+}

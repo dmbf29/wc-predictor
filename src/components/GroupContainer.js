@@ -12,10 +12,6 @@ class GroupContainer extends Component {
     this.setState({matches: matches})
   }
 
-  showProps(){
-    console.log(this.props)
-  }
-
   render() {
     return (
       <div className="group-container" id={this.props.group.name}>

@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #EAE3BA;
-  border: 1px solid #0f4583;
+  background-color: #EDEDED;
+  /*border: 1px solid #0f4583;*/
 }
 
 .group-tab {
   padding: 5px;
   flex: 1;
-  border-right: 1px solid #0f4583;
+  /*border-right: 1px solid #0f4583;*/
 }
 
 .group-tab h6 {
