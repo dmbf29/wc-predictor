@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './LeaguesContainer.css';
 import { Link } from 'react-router-dom'
+import LeaguePredictionsContainer from "./LeaguePredictionsContainer";
 
 class LeaguesContainer extends Component {
   constructor() {
@@ -9,7 +10,7 @@ class LeaguesContainer extends Component {
     this.state = {leagues: []}
     console.log(localStorage)
     let token = "Bearer " + localStorage.getItem("jwt")
-    axios.get(localStorage.url + '/api/v1/leagues.json', { headers: { 'Authorization': token }})
+    axios.get(localStorage.url + '/api/v1/leagues', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({leagues: response.data.leagues, token: token})
       console.log(this.state.leagues)
@@ -18,6 +19,12 @@ class LeaguesContainer extends Component {
   }
 
   componentDidMount() {
+    let token = "Bearer " + localStorage.getItem("jwt")
+    axios.get(localStorage.url + `/api/v1/group_names`, { headers: { 'Authorization': token }})
+    .then(response => {
+      this.setState({groups: response.data.groups})
+    })
+    .catch(error => console.log(error))
   }
 
   visitPredictions(user) {
@@ -43,6 +50,7 @@ class LeaguesContainer extends Component {
               <h3>{league.name}</h3>
               <small>key: {league.key} | password: {league.password}</small>
             </div>
+            <LeaguePredictionsContainer groups={this.state.groups} league={league} />
             <table className="table table-hover">
               <thead className="user-sub">
                 <tr>
