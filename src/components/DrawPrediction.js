@@ -21,6 +21,7 @@ class DrawPrediction extends Component {
 
 
   render() {
+    const canEdit = this.props.canEdit
     const noPredictionMade = this.props.match.prediction == null
     const isInactive = () => {
       if(noPredictionMade) {
@@ -32,50 +33,54 @@ class DrawPrediction extends Component {
       }
     }
     const addNewPrediction = () => {
-      axios.post(
-        localStorage.url + '/api/v1/predictions',
-        { prediction:
-          {
-            draw: true,
-            winner_id: null,
-            loser_id: null,
-            match_id: this.props.match.id,
-            round_id: this.props.match.round.id
-          }
-        },
-        { headers: { 'Authorization': this.props.token }}
-      )
-      .then(response => {
-        console.log(response.data)
-        this.props.createPrediction(response)
-        this.updateActivePredictions()
-      })
-      .catch(error => console.log(error))
+      if(canEdit === "true") {
+        axios.post(
+          localStorage.url + '/api/v1/predictions',
+          { prediction:
+            {
+              draw: true,
+              winner_id: null,
+              loser_id: null,
+              match_id: this.props.match.id,
+              round_id: this.props.match.round.id
+            }
+          },
+          { headers: { 'Authorization': this.props.token }}
+        )
+        .then(response => {
+          console.log(response.data)
+          this.props.createPrediction(response)
+          this.updateActivePredictions()
+        })
+        .catch(error => console.log(error))
+      }
     }
     const updatePrediction = (prediction_id) => {
-      axios.post(
-        localStorage.url + `/api/v1/predictions/${prediction_id}`,
-        { prediction:
-          {
-            draw: true,
-            winner_id: null,
-            loser_id: null,
-            match_id: this.props.match.id,
-            round_id: this.props.match.round.id
-          }
-        },
-        { headers: { 'Authorization': this.props.token }}
-      )
-      .then(response => {
-        console.log(response.data)
-        this.props.createPrediction(response)
-        this.updateActivePredictions()
-      })
-      .catch(error => console.log(error))
+      if(canEdit === "true") {
+        axios.post(
+          localStorage.url + `/api/v1/predictions/${prediction_id}`,
+          { prediction:
+            {
+              draw: true,
+              winner_id: null,
+              loser_id: null,
+              match_id: this.props.match.id,
+              round_id: this.props.match.round.id
+            }
+          },
+          { headers: { 'Authorization': this.props.token }}
+        )
+        .then(response => {
+          console.log(response.data)
+          this.props.createPrediction(response)
+          this.updateActivePredictions()
+        })
+        .catch(error => console.log(error))
+      }
     }
     return (
         <div className={'flag-box draw ' + ' ' + (isInactive() ? ("inactive") : ("active"))} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
-        <img className="team-flag" src={require(`./flags/draw1.png`)} alt="team-flag" />
+        <img className={"team-flag " + (canEdit === "true" ? "team-flag-hover" : "")  } src={require(`./flags/draw1.png`)} alt="team-flag" />
       </div>
     );
   }

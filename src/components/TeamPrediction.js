@@ -14,6 +14,7 @@ class TeamPrediction extends Component {
   }
 
   render() {
+    const canEdit = this.props.canEdit
     const noPredictionMade = this.props.match.prediction == null
     const isInactive = () => {
       if(noPredictionMade) {
@@ -25,27 +26,30 @@ class TeamPrediction extends Component {
       }
     }
     const addNewPrediction = () => {
-      axios.post(
-        localStorage.url + '/api/v1/predictions',
-        { prediction:
-          {
-            winner_id: this.props.team.id,
-            match_id: this.props.match.id,
-            round_id: this.props.match.round.id,
-            draw: false
-          }
-        },
-        { headers: { 'Authorization': this.props.token }}
-      )
-      .then(response => {
-        console.log(response.data)
-        this.props.createPrediction(response)
-        this.updateActivePredictions()
-      })
-      .catch(error => console.log(error))
+      if(canEdit === "true") {
+        axios.post(
+          localStorage.url + '/api/v1/predictions',
+          { prediction:
+            {
+              winner_id: this.props.team.id,
+              match_id: this.props.match.id,
+              round_id: this.props.match.round.id,
+              draw: false
+            }
+          },
+          { headers: { 'Authorization': this.props.token }}
+        )
+        .then(response => {
+          console.log(response.data)
+          this.props.createPrediction(response)
+          this.updateActivePredictions()
+        })
+        .catch(error => console.log(error))
+      }
     }
     const updatePrediction = (prediction_id) => {
-      axios.post(
+      if(canEdit === "true") {
+        axios.post(
         localStorage.url + `/api/v1/predictions/${prediction_id}`,
         { prediction:
           {
@@ -64,10 +68,11 @@ class TeamPrediction extends Component {
         this.updateActivePredictions()
       })
       .catch(error => console.log(error))
+      }
     }
     return (
       <div className={'flag-box ' + this.props.team.abbrev + ' ' + (isInactive() ? ("inactive") : ("active"))} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
-        <img className="team-flag" src={require(`./flags/${this.props.team.abbrev.toLowerCase()}.png`)} alt="team-flag" />
+        <img className={"team-flag " + (canEdit === "true" ? "team-flag-hover" : "")  } src={require(`./flags/${this.props.team.abbrev.toLowerCase()}.png`)} alt="team-flag" />
       </div>
     );
   }

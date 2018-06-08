@@ -16,7 +16,7 @@
   color: white;
   padding: 10px;
   /*margin: 0 -20px;*/
-  font-family: 'Dusha V5';
+  font-family: 'Dusha V10';
 }
 .league-header h3 {
   margin: 0;
@@ -36,7 +36,7 @@
   background-color: #B40B22;
   color: white;
   padding: 5px 0;
-  font-family: 'Dusha V5';
+  font-family: 'Dusha V10';
 }
 .user-sub-item {
   flex: 1;
@@ -55,4 +55,19 @@
 }
 .user-overall {
 
+}
+.table thead th {
+  border: none;
+}
+
+@media only screen and (max-width : 480px) {
+  .table td {
+    padding: 0.50rem;
+  }
+  .league-header h3 {
+    font-size: 1.30rem;
+  }
+  .table thead th {
+    font-size: 0.9rem;
+  }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
-// import MatchesContainer from "./MatchesContainer";
+import OtherMatchesContainer from "./OtherMatchesContainer";
 import MatchesContainer from "./MatchesContainer";
 import NotFound from "./NotFound";
 import SignUp from "./SignUp";
@@ -34,6 +34,10 @@ const Router = () => (
       <Route exact path="/account" component={SignIn} />
     }
     <Route exact path="/account" component={Account} />
+    { localStorage.jwt === undefined &&
+      <Route exact path="/predictions/:userId/:userName" component={SignIn} />
+    }
+    <Route exact path="/predictions/:userId/:userName" component={OtherMatchesContainer} />
     <Route component={NotFound} />
   </Switch>
 );

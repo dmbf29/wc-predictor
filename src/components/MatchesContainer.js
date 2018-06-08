@@ -30,7 +30,7 @@ class MatchesContainer extends Component {
           </div>
         }
         {this.state.groups.map(group => (
-          <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} />
+          <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} canEdit="true" />
         ))}
       </div>
     )

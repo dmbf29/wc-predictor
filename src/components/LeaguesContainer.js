@@ -27,6 +27,10 @@ class LeaguesContainer extends Component {
     .catch(error => console.log(error))
   }
 
+  visitPredictions(user) {
+    this.props.history.push(`/predictions/${user.id}/${user.name}`)
+  }
+
   render() {
     return (
       <div>
@@ -58,7 +62,7 @@ class LeaguesContainer extends Component {
               </thead>
               <tbody>
                 {league.users.map((user, index) => (
-                  <tr key={user.id}>
+                  <tr key={user.id} onClick={() => { this.visitPredictions(user) }}>
                     <td scope="row">{index + 1}</td>
                     <td>{user.name}</td>
                     <td>{user.picks} / 48</td>

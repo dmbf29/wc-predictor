@@ -22,18 +22,18 @@ class GroupContainer extends Component {
           <div className="match-tile" id={'match' + match.id} key={match.id} >
             <div className="match-info">
               <p><strong>{match.team_home.name} vs. {match.team_away.name}</strong></p>
-              <p>{match.group.name}</p>
+              <small><span className="fifa-rank">Fifa Rank | </span>{match.team_home.ranking} vs. {match.team_away.ranking}</small>
               <p><em>{match.kickoff_time}</em></p>
             </div>
             <div className="flag-group">
               <div className="match-home match-team">
-                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} />
+                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} canEdit={this.props.canEdit} />
               </div>
               <div className="match-away match-team">
-                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_away} />
+                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_away} canEdit={this.props.canEdit} />
               </div>
               <div className="match-draw match-team">
-                <DrawPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} />
+                <DrawPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} canEdit={this.props.canEdit} />
               </div>
             </div>
           </div>
