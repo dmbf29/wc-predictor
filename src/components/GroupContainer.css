@@ -19,6 +19,13 @@
   margin: 0 -20px;
   font-family: 'Dusha V10';
 }
+.Correct {
+  color: #18BE06;
+}
+
+.Incorrect {
+ color: #B40B22;
+}
 
 @media only screen and (max-width : 480px) {
   .group-header {

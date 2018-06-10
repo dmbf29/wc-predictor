@@ -85,7 +85,7 @@
     flex: 1;
   }
   .fifa-rank {
-    display: block;
+    display: inline;
   }
 }
 
