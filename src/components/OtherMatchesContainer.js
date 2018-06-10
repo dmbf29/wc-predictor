@@ -13,7 +13,7 @@ class OtherMatchesContainer extends Component {
     axios.get(localStorage.url + `/api/v1/user`, { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({currentUser: response.data.user, token: token})
-      this.setState({canEdit: this.state.currentUser.id == this.props.match.params.userId, userName: this.props.match.params.userName})
+      this.setState({canEdit: this.state.currentUser.id === parseInt(this.props.match.params.userId), userName: this.props.match.params.userName})
     })
     .catch(error => console.log(error))
   }

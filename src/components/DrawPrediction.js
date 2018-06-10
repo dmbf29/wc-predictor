@@ -79,7 +79,7 @@ class DrawPrediction extends Component {
       }
     }
     return (
-        <div className={'flag-box draw ' + ' ' + (isInactive() ? ("inactive") : ("active"))} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
+        <div className={`flag-box draw ${(isInactive() ? ("inactive") : ("active"))}`} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
         <img className={"team-flag " + (canEdit === "true" ? "team-flag-hover" : "")  } src={require(`./flags/draw1.png`)} alt="team-flag" />
       </div>
     );

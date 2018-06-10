@@ -3,7 +3,6 @@ import axios from 'axios'
 import './MatchesContainer.css';
 import GroupContainer from './GroupContainer'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import { faClock } from '@fortawesome/fontawesome-free-solid'
 
 class MatchesContainer extends Component {
   constructor() {

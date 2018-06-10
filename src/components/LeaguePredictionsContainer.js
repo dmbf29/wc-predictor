@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import './LeaguePredictionsContainer.css';
-import LeaguePredictionsGroup from "./LeaguePredictionsGroup";
 import MatchPredictions from "./MatchPredictions";
 
 class LeaguePredictionsContainer extends Component {
@@ -14,13 +12,11 @@ class LeaguePredictionsContainer extends Component {
     }
   }
   componentDidMount() {
-    console.log('this props')
-    console.log(this)
   }
 
   openPredictionsContainer(groupId) {
     const activeDiv = document.querySelector('.active-tab');
-    const hiddenDiv = document.querySelector('.default-hidden');
+    // const hiddenDiv = document.querySelector('.default-hidden');
     if (activeDiv) {
       activeDiv.classList.remove('active-tab');
     }

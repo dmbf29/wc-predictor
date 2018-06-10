@@ -17,8 +17,6 @@ class Account extends Component {
       this.setState({user: response.data, token: token})
       const name = document.getElementById("name")
       const email = document.getElementById("email")
-      const password = document.getElementById("password")
-      const password_confirmation = document.getElementById("password_confirmation")
       const timezone = document.getElementById("timezone")
       const notify = document.getElementById("notify")
       name.value = response.data.user.name

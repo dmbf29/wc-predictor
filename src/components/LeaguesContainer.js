@@ -74,7 +74,7 @@ class LeaguesContainer extends Component {
               <tbody>
                 {league.users.map((user, index) => (
                   <tr key={user.id} onClick={() => { this.visitPredictions(user) }}>
-                    <td scope="row">{index + 1}</td>
+                    <td>{index + 1}</td>
                     <td>{user.name}</td>
                     <td>{user.picks} / 48</td>
                     <td>{user.score}</td>
