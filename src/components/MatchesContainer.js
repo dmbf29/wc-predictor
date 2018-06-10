@@ -13,9 +13,17 @@ class MatchesContainer extends Component {
     axios.get(localStorage.url + '/api/v1/groups.json', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({groups: response.data.groups, token: token})
-      console.log(this.state)
+      // console.log(this.state)
     })
-    .catch(error => console.log(error))
+    .catch(error => {console.log(error)
+      this.addErrors();
+    })
+  }
+
+  addErrors() {
+    const matchesContainer = document.querySelector(".matches-container");
+    matchesContainer.classList.add('display-none')
+    matchesContainer.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>There was an error loading matches.</small><br /><small style='padding-bottom:5px;'>Try signing in again.</small>");
   }
 
   componentDidMount() {
@@ -24,9 +32,9 @@ class MatchesContainer extends Component {
   render() {
     return (
       <div className="matches-container">
-        {this.state.groups === null &&
+        {this.state.groups.length === 0 &&
           <div className="container">
-            <h1><FontAwesomeIcon icon={faClock} /></h1>
+            <h1><FontAwesomeIcon icon="spinner" spin /></h1>
           </div>
         }
         {this.state.groups.map(group => (

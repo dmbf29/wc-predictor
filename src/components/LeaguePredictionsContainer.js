@@ -19,9 +19,10 @@ class LeaguePredictionsContainer extends Component {
   }
 
   openPredictionsContainer(groupId) {
-    const hiddenDiv = document.querySelector('.active-tab');
-    if (hiddenDiv) {
-      hiddenDiv.classList.remove('active-tab');
+    const activeDiv = document.querySelector('.active-tab');
+    const hiddenDiv = document.querySelector('.default-hidden');
+    if (activeDiv) {
+      activeDiv.classList.remove('active-tab');
     }
     const newDiv = document.querySelector(`.tab-${this.props.league.id}-${groupId}`);
     newDiv.classList.add('active-tab');

@@ -8,14 +8,20 @@ class LeaguesContainer extends Component {
   constructor() {
     super()
     this.state = {leagues: []}
-    console.log(localStorage)
+    // console.log(localStorage)
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + '/api/v1/leagues', { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({leagues: response.data.leagues, token: token})
-      console.log(this.state.leagues)
+      // console.log(this.state)
+      const leaguesContainers = document.querySelectorAll(".league-container");
+      leaguesContainers.forEach(function (container) {
+        container.classList.remove('display-none')
+      })
     })
-    .catch(error => console.log(error))
+    .catch(error => {console.log(error)
+      this.addErrors();
+    })
   }
 
   componentDidMount() {
@@ -31,21 +37,26 @@ class LeaguesContainer extends Component {
     this.props.history.push(`/predictions/${user.id}/${user.name}`)
   }
 
+  addErrors() {
+    const MatchesContainer = document.querySelector(".container");
+    MatchesContainer.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>There was an error loading leagues.</small><br /><small style='padding-bottom:5px;'>Try signing in again.</small>");
+  }
+
   render() {
     return (
       <div>
         { this.state.leagues.length === 0 &&
-          <div className="container">
-          <div className="row" style={{justifyContent: 'center'}}>
-          <div className="form-buttons col-xs-offset-3 col-xs-offset-6">
-            <Link className="red-button btn" to='/league_create'>Create a League</Link>
-            <Link className="red-button btn" to='/league_join'>Join a League</Link>
-          </div>
-          </div>
+          <div className="container league-container display-none">
+            <div className="row" style={{justifyContent: 'center'}}>
+              <div className="form-buttons col-xs-offset-3 col-xs-offset-6">
+                <Link className="red-button btn" to='/league_create'>Create a League</Link>
+                <Link className="red-button btn" to='/league_join'>Join a League</Link>
+              </div>
+            </div>
           </div>
         }
         {this.state.leagues.map(league => (
-          <div className="league-container" key={league.id}>
+          <div className="league-container display-none" key={league.id}>
             <div className="league-header">
               <h3>{league.name}</h3>
               <small>key: {league.key} | password: {league.password}</small>
