@@ -51,11 +51,11 @@ class SignIn extends Component {
           <form>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
+              <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" className="form-control" id="password" placeholder="Password" />
+              <input type="password" className="form-control" id="password" placeholder="Password" required />
             </div>
             <div className="form-buttons" >
               <button className="red-button btn"

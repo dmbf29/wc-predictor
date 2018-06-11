@@ -73,19 +73,19 @@ class SignUp extends Component {
           <form>
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" />
+              <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" required />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
+              <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" className="form-control" id="password" placeholder="Password" />
+              <input type="password" className="form-control" id="password" placeholder="Password" required />
             </div>
             <div className="form-group">
               <label htmlFor="password_confirmation">Confirm Password</label>
-              <input type="password" className="form-control" id="password_confirmation" placeholder="Confirm Password" />
+              <input type="password" className="form-control" id="password_confirmation" placeholder="Confirm Password" required />
             </div>
             <div className="form-group">
               <label htmlFor="timezone">Time Zone</label>

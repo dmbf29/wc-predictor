@@ -77,11 +77,11 @@ render() {
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" className="form-control" id="password" placeholder="Password" />
+              <input type="password" className="form-control" id="password" placeholder="Password" required />
             </div>
             <div className="form-group">
               <label htmlFor="password_confirmation">Confirm Password</label>
-              <input type="password" className="form-control" id="password_confirmation" placeholder="Confirm Password" />
+              <input type="password" className="form-control" id="password_confirmation" placeholder="Confirm Password" required />
             </div>
             <div className="form-group">
               <label htmlFor="timezone">Time Zone</label>
