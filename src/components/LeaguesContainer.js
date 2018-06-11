@@ -9,6 +9,10 @@ class LeaguesContainer extends Component {
     super()
     this.state = {leagues: []}
     // console.log(localStorage)
+    this.getLeagues()
+  }
+
+  getLeagues() {
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + '/api/v1/leagues', { headers: { 'Authorization': token }})
     .then(response => {

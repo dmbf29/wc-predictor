@@ -42,7 +42,12 @@ class OtherMatchesContainer extends Component {
             </div>
           }
           {this.state.otherGroups.map(group => (
-            <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} canEdit={ this.state.canEdit === true ? "true" : "false"} />
+            <div className="group-container" id={group.name} key={group.id}>
+              <div className="group-header">
+                <h3>{group.name}</h3>
+              </div>
+              <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} canEdit="true" />
+            </div>
           ))}
         </div>
       </div>

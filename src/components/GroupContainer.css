@@ -1,6 +1,18 @@
+.group-container {
+  position: relative;
+}
+.sortby-btn {
+  position: absolute;
+  top: -25px;
+  right: -10px;
+}
+.sortby-btn:hover {
+  cursor: pointer;
+}
+
 .group-header {
   background: #0f4583 url('./fwc_darkbluebg.png') repeat;
-  color: white;
+  color: #EAE3BA;
   padding: 15px;
   margin: 0 -20px;
   font-family: 'Dusha V10';
@@ -14,7 +26,7 @@
 
 .user-header {
   background: #0f4583 url('./fwc_darkbluebg.png') repeat;
-  color: #B40B22;
+  color: white;
   padding: 15px;
   margin: 0 -20px;
   font-family: 'Dusha V10';
@@ -32,6 +44,9 @@
     padding: 10px;
   }
   .group-header h3 {
+    font-size: 0.9em;
+  }
+  .sortby-btn {
     font-size: 0.9em;
   }
 }

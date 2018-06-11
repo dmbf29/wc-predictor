@@ -25,11 +25,7 @@ class GroupContainer extends Component {
 
   render() {
     return (
-      <div className="group-container" id={this.props.group.name}>
-        <div className="group-header">
-          <h3>{this.props.group.name}</h3>
-        </div>
-        {this.props.group.matches.map(match => (
+        this.props.matches.map(match => (
           <div className="match-tile" id={'match' + match.id} key={match.id} >
             <div className="match-info">
               <p><strong>{match.team_home.name} vs. {match.team_away.name}</strong></p>
@@ -56,8 +52,7 @@ class GroupContainer extends Component {
               </div>
             </div>
           </div>
-        ))}
-      </div>
+        ))
     )
   }
 }
