@@ -79,6 +79,9 @@ class MatchesContainer extends Component {
         {this.state.sort === "time" &&
           <div className="group-container" id='matchesSort' key='matchesSort'>
             <div className="sortby-btn" onClick={this.state.sort === "time" ? this.sortByGroups.bind(this) : this.sortByTime.bind(this) }><FontAwesomeIcon icon="sort" /> { this.state.sort === "time" ? "Groups" : "Kickoff Time" }</div>
+            <div className="group-header">
+              <h3>Matches</h3>
+            </div>
             <GroupContainer token={this.state.token} matches={this.state.matches} canEdit="true" />
           </div>
         }
