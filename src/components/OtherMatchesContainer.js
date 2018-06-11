@@ -15,7 +15,9 @@ class OtherMatchesContainer extends Component {
       this.setState({currentUser: response.data.user, token: token})
       this.setState({canEdit: this.state.currentUser.id === parseInt(this.props.match.params.userId, 10), userName: this.props.match.params.userName})
     })
-    .catch(error => console.log(error))
+    .catch(error => {console.log(error)
+      this.addErrors();
+    })
   }
 
   componentDidMount() {
@@ -26,7 +28,15 @@ class OtherMatchesContainer extends Component {
       this.setState({otherGroups: response.data.matches})
       console.log(this.state)
     })
-    .catch(error => console.log(error))
+    .catch(error => {console.log(error)
+      this.addErrors();
+    })
+  }
+
+  addErrors() {
+    const matchesContainer = document.querySelector(".matches-container");
+    matchesContainer.classList.add('display-none')
+    matchesContainer.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>There was an error loading matches.</small><br /><small style='padding-bottom:5px;'>Try signing in again.</small>");
   }
 
   render() {
@@ -36,9 +46,9 @@ class OtherMatchesContainer extends Component {
           <h3>{this.state.userName}</h3>
         </div>
         <div className="matches-container">
-          {this.state.groups === null &&
-            <div className="container">
-              <h1><FontAwesomeIcon icon={faClock} /></h1>
+          {this.state.otherGroups.length === 0 &&
+            <div className="container" style={{marginTop: "50px"}}>
+              <h1><FontAwesomeIcon icon="spinner" spin /></h1>
             </div>
           }
           {this.state.otherGroups.map(group => (
