@@ -3,6 +3,7 @@ import axios from 'axios'
 import './LeaguesContainer.css';
 import { Link } from 'react-router-dom'
 import LeaguePredictionsContainer from "./LeaguePredictionsContainer";
+import Leaderboard from "./Leaderboard";
 
 class LeaguesContainer extends Component {
   constructor() {
@@ -28,13 +29,27 @@ class LeaguesContainer extends Component {
     })
   }
 
-  componentDidMount() {
+  getGroupNames() {
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + `/api/v1/group_names`, { headers: { 'Authorization': token }})
     .then(response => {
       this.setState({groups: response.data.groups})
     })
     .catch(error => console.log(error))
+  }
+
+  getLeaderboard() {
+    let token = "Bearer " + localStorage.getItem("jwt")
+    axios.get(localStorage.url + `/api/v1/users`, { headers: { 'Authorization': token }})
+    .then(response => {
+      this.setState({leaders: response.data.users})
+    })
+    .catch(error => console.log(error))
+  }
+
+  componentDidMount() {
+    this.getGroupNames();
+    this.getLeaderboard();
   }
 
   visitPredictions(user) {
@@ -88,6 +103,7 @@ class LeaguesContainer extends Component {
             </table>
           </div>
         ))}
+        <Leaderboard leaders={this.state.leaders} visitPredictions={this.visitPredictions} />
       </div>
     )
   }
