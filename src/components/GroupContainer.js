@@ -40,17 +40,29 @@ class GroupContainer extends Component {
               }
               <p><em>{match.kickoff_time}</em></p>
             </div>
-            <div className="flag-group">
-              <div className="match-home match-team">
-                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} canEdit={ match.started === true ? "false" : this.props.canEdit} />
+            { match.round.name === "Group Stage" &&
+              <div className="flag-group">
+                <div className="match-home match-team">
+                  <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} canEdit={ match.started === true ? "false" : this.props.canEdit} />
+                </div>
+                <div className="match-away match-team">
+                  <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_away} canEdit={ match.started === true ? "false" : this.props.canEdit} />
+                </div>
+                <div className="match-draw match-team">
+                  <DrawPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} canEdit={ match.started === true ? "false" : this.props.canEdit} />
+                </div>
               </div>
-              <div className="match-away match-team">
-                <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_away} canEdit={ match.started === true ? "false" : this.props.canEdit} />
+            }
+            { match.round.name !== "Group Stage" &&
+              <div className="flag-group">
+                <div className="match-home match-team">
+                  <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_home} canEdit={ match.started === true ? "false" : "false" } />
+                </div>
+                <div className="match-away match-team">
+                  <TeamPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} team={match.team_away} canEdit={ match.started === true ? "false" : "false" } />
+                </div>
               </div>
-              <div className="match-draw match-team">
-                <DrawPrediction token={this.props.token} createPrediction={this.createMatchPrediction} match={match} canEdit={ match.started === true ? "false" : this.props.canEdit} />
-              </div>
-            </div>
+            }
           </div>
         ))
     )
