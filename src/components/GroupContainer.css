@@ -1,14 +1,6 @@
 .group-container {
   position: relative;
 }
-.sortby-btn {
-  position: absolute;
-  top: -25px;
-  right: -10px;
-}
-.sortby-btn:hover {
-  cursor: pointer;
-}
 
 .group-header {
   background: #0f4583 url('./fwc_darkbluebg.png') repeat;

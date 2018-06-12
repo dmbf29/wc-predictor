@@ -7,7 +7,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 class MatchesContainer extends Component {
   constructor() {
     super()
-    this.state = {groups: [], sort: "groups", matches: []}
+    this.state = {groups: [], sort: "groups", matches: [], stage: "groups"}
     this.getGroups()
   }
 
@@ -55,6 +55,13 @@ class MatchesContainer extends Component {
   render() {
     return (
       <div className="matches-container">
+        <div className="nav-btns">
+          <div className="stages-container">
+            <div className="groups-btn" onClick={this.state.stage === "knockout" ? this.sortByGroups.bind(this) : "" }>Groups</div>
+            <div className="knockout-btn" onClick={this.state.stage === "groups" ? this.sortByGroups.bind(this) : "" }>Knockout</div>
+          </div>
+          <div className="sortby-btn" onClick={this.state.sort === "time" ? this.sortByGroups.bind(this) : this.sortByTime.bind(this) }><FontAwesomeIcon icon="sort" /> { this.state.sort === "time" ? "Groups" : "Kickoff Time" }</div>
+        </div>
         {this.state.groups.length === 0 &&
           <div className="container">
             <h1><FontAwesomeIcon icon="spinner" spin /></h1>
@@ -63,7 +70,6 @@ class MatchesContainer extends Component {
         {this.state.sort === "groups" &&
           this.state.groups.map(group => (
             <div className="group-container" id={group.name} key={group.id}>
-              <div className="sortby-btn" onClick={this.state.sort === "time" ? this.sortByGroups.bind(this) : this.sortByTime.bind(this) }><FontAwesomeIcon icon="sort" /> { this.state.sort === "time" ? "Groups" : "Kickoff Time" }</div>
               <div className="group-header">
                 <h3>{group.name}</h3>
               </div>
@@ -78,7 +84,6 @@ class MatchesContainer extends Component {
         }
         {this.state.sort === "time" &&
           <div className="group-container" id='matchesSort' key='matchesSort'>
-            <div className="sortby-btn" onClick={this.state.sort === "time" ? this.sortByGroups.bind(this) : this.sortByTime.bind(this) }><FontAwesomeIcon icon="sort" /> { this.state.sort === "time" ? "Groups" : "Kickoff Time" }</div>
             <div className="group-header">
               <h3>Matches</h3>
             </div>
