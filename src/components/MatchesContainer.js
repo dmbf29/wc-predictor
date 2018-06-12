@@ -7,7 +7,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 class MatchesContainer extends Component {
   constructor() {
     super()
-    this.state = {groups: [], sort: "groups", matches: [], stage: "groups"}
+    this.state = {groups: [], sort: "groups", matches: [], stage: "groups", knockouts: []}
     this.getGroups()
   }
 
@@ -33,6 +33,18 @@ class MatchesContainer extends Component {
     })
   }
 
+  getKnockouts() {
+    let token = "Bearer " + localStorage.getItem("jwt")
+    axios.get(localStorage.url + '/api/v1/knockouts', { headers: { 'Authorization': token }})
+    .then(response => {
+      console.log(response)
+      this.setState({knockouts: response.data.knockouts, token: token})
+    })
+    .catch(error => {console.log(error)
+      this.addErrors();
+    })
+  }
+
   addErrors() {
     const matchesContainer = document.querySelector(".matches-container");
     matchesContainer.classList.add('display-none')
@@ -49,6 +61,16 @@ class MatchesContainer extends Component {
     this.getGroups()
   }
 
+  displayKnockouts() {
+    this.setState({stage: "knockouts"})
+    this.getKnockouts()
+  }
+
+  displayGroups() {
+    this.setState({stage: "groups"})
+    this.getGroups()
+  }
+
   componentDidMount() {
   }
 
@@ -57,8 +79,8 @@ class MatchesContainer extends Component {
       <div className="matches-container">
         <div className="nav-btns">
           <div className="stages-container">
-            <div className="groups-btn" onClick={this.state.stage === "knockout" ? this.sortByGroups.bind(this) : "" }>Groups</div>
-            <div className="knockout-btn" onClick={this.state.stage === "groups" ? this.sortByGroups.bind(this) : "" }>Knockout</div>
+            <div className="groups-btn" onClick={ this.displayGroups.bind(this) }>Groups</div>
+            <div className="knockout-btn" onClick={ this.displayKnockouts.bind(this) }>Knockout</div>
           </div>
           <div className="sortby-btn" onClick={this.state.sort === "time" ? this.sortByGroups.bind(this) : this.sortByTime.bind(this) }><FontAwesomeIcon icon="sort" /> { this.state.sort === "time" ? "Groups" : "Kickoff Time" }</div>
         </div>
