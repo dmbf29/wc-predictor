@@ -48,6 +48,8 @@
 
 .match-team {
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 .match-team h4 {
   margin: 5px;
