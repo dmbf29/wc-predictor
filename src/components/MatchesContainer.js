@@ -75,10 +75,10 @@ class MatchesContainer extends Component {
       <div className="matches-container">
         <div className="nav-btns">
           <div className="stages-container">
-            <div className="groups-btn" onClick={ this.sortByGroups.bind(this) }>Group Stage</div>
-            <div className="knockout-btn" onClick={ this.sortByKnockoutGroups.bind(this) }>Knockout Bracket</div>
+            <div className={`groups-btn stage-btn ${this.state.sort === "groups" ? "stage-active" : ""}`} onClick={ this.sortByGroups.bind(this) }>Groups</div>
+            <div className={`sortby-btn stage-btn ${this.state.sort === "time" ? "stage-active" : ""}`} onClick={ this.sortByTime.bind(this) }>List</div>
+            <div className={`knockout-btn stage-btn ${this.state.sort === "knockouts" ? "stage-active" : ""}`} onClick={ this.sortByKnockoutGroups.bind(this) }>Knockout</div>
           </div>
-          <div className="sortby-btn" onClick={this.state.sort === "time" ? this.sortByGroups.bind(this) : this.sortByTime.bind(this) }><FontAwesomeIcon icon="sort" /> { this.state.sort === "time" ? "Groups" : "Kickoff Time" }</div>
         </div>
         {this.state.groups.length === 0 &&
           <div className="container">
@@ -95,17 +95,17 @@ class MatchesContainer extends Component {
             </div>
           ))
         }
-        { this.state.sort === "time" && this.state.matches.length === 0 &&
-          <div className="container">
-            <h1><FontAwesomeIcon icon="spinner" spin /></h1>
-          </div>
-        }
         {this.state.sort === "time" &&
           <div className="group-container" id='matchesSort' key='matchesSort'>
             <div className="group-header">
               <h3>Matches</h3>
             </div>
             <GroupContainer token={this.state.token} matches={this.state.matches} canEdit="true" />
+          </div>
+        }
+        { this.state.sort === "time" && this.state.matches.length === 0 &&
+          <div className="container" style={{marginTop: "50px"}}>
+            <h1><FontAwesomeIcon icon="spinner" spin /></h1>
           </div>
         }
         {this.state.sort === "knockouts" &&

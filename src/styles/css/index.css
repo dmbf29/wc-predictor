@@ -200,9 +200,6 @@ gray: #EC0B2B;
   .group-header h3 {
     font-size: 0.9em; }
 
-  .sortby-btn {
-    font-size: 0.9em; }
-
   .group-header h5 {
     font-size: 0.9em; }
 
@@ -263,6 +260,35 @@ gray: #EC0B2B;
   background-color: #E1E5E8;
   padding: 0 5px; }
 
+.stages-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Dusha V10";
+  font-size: 1rem; }
+
+.stage-btn {
+  margin-right: 10px;
+  margin-bottom: 4px; }
+
+.stage-btn:hover {
+  margin-bottom: 0;
+  border-bottom: 4px #EAE3BA solid;
+  transform: scale(1.03); }
+
+.stage-active {
+  margin-bottom: 0;
+  border-bottom: 4px #B40B22 solid; }
+
+.groups-btn:hover {
+  cursor: pointer; }
+
+.knockout-btn:hover {
+  cursor: pointer; }
+
+.sortby-btn:hover {
+  cursor: pointer; }
+
 @media only screen and (max-width: 1130px) {
   .knockout-tile {
     font-size: 0.9rem; }
@@ -273,15 +299,20 @@ gray: #EC0B2B;
     margin: 20px 5px;
     font-size: 0.8rem; }
     .knockout-tile .team-flag {
-      width: 55px; } }
+      width: 55px; }
+
+  .stages-container {
+    font-size: 0.9rem; } }
 @media only screen and (max-width: 680px) {
   .knockout-tile {
     font-size: 0.7rem; }
     .knockout-tile .team-flag {
       width: 50px; } }
 @media only screen and (max-width: 600px) {
-  .knockout-tile .team-flag {
-    width: 40px; } }
+  .knockout-tile {
+    font-size: 0.8rem; }
+    .knockout-tile .team-flag {
+      width: 40px; } }
 @media only screen and (max-width: 550px) {
   .knockout-tile .team-flag {
     width: 35px; } }
@@ -428,28 +459,6 @@ gray: #EC0B2B;
   display: flex;
   justify-content: space-between;
   align-items: center; }
-
-.stages-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-family: "Dusha V10";
-  font-size: 1.1rem; }
-
-.groups-btn {
-  margin-right: 10px; }
-
-.groups-btn:hover {
-  cursor: pointer; }
-
-.knockout-btn:hover {
-  cursor: pointer; }
-
-.sortby-btn {
-  font-size: 0.8em; }
-
-.sortby-btn:hover {
-  cursor: pointer; }
 
 @media only screen and (max-width: 480px) {
   .match-tile {

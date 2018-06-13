@@ -74,32 +74,6 @@
   align-items: center;
 }
 
-.stages-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-family: "Dusha V10";
-  font-size: 1.1rem;
-}
-
-.groups-btn{
-  margin-right: 10px;
-}
-
-.groups-btn:hover {
-  cursor: pointer;
-}
-
-.knockout-btn:hover {
-  cursor: pointer;
-}
-.sortby-btn {
-  font-size: 0.8em;
-}
-.sortby-btn:hover {
-  cursor: pointer;
-}
-
 @media only screen and (max-width : 480px) {
   .match-tile {
     .team-flag {

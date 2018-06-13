@@ -71,6 +71,47 @@
   padding: 0 5px;
 }
 
+.stages-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Dusha V10";
+  font-size: 1rem;
+}
+.stage-btn {
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+.stage-btn:hover {
+  margin-bottom: 0;
+  border-bottom: 4px #EAE3BA solid;
+  transform: scale(1.03);
+}
+
+.groups-btn{
+}
+
+.stage-active {
+   margin-bottom: 0;
+  border-bottom: 4px #B40B22 solid;
+}
+
+.knockout-btn{
+}
+
+.sortby-btn {
+}
+
+.groups-btn:hover {
+  cursor: pointer;
+}
+
+.knockout-btn:hover {
+  cursor: pointer;
+}
+.sortby-btn:hover {
+  cursor: pointer;
+}
 
 
 @media only screen and (max-width : 1130px) {
@@ -90,6 +131,9 @@
       width: 55px;
     }
   }
+  .stages-container {
+    font-size: 0.9rem;
+  }
 }
 
 @media only screen and (max-width : 680px) {
@@ -103,6 +147,7 @@
 
 @media only screen and (max-width : 600px) {
   .knockout-tile {
+    font-size: 0.8rem;
     .team-flag {
       width: 40px;
     }
