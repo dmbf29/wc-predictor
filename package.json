@@ -20,9 +20,9 @@
   },
   "scripts": {
     "sass" : "sass --watch src/styles/scss:src/styles/css",
-    "sass:build": "sass — update src/styles/scss:src/styles/css",
+    "sass:build": "sass --update src/styles/scss:src/styles/css",
     "start": "react-scripts start",
-    "build": "sass:build && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
