@@ -1,0 +1,720 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+.App {
+  text-align: center;
+  color: #0f4583;
+  font-family: 'Open Sans';
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;*/
+  min-height: 95vh; }
+
+.doug {
+  position: absolute;
+  bottom: -38px;
+  right: 7px;
+  color: #AFAD90; }
+
+.doug:hover {
+  text-decoration: none;
+  color: #0f4583; }
+
+.App-header {
+  height: 20vh;
+  /*padding: 20px 0;*/
+  margin: 20px 10px;
+  color: white;
+  background: transparent;
+  background-image: url("../../components/assets/banner.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.App-header img {
+  height: 25vh; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+form {
+  min-width: 300px; }
+
+.timezone-picker {
+  width: 100%; }
+
+.timezone-picker-textfield {
+  background-color: white; }
+
+.form-container {
+  margin: 20px 0 0px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  padding: 20px 0; }
+
+.form-container a {
+  color: white; }
+
+.form-container h3 {
+  color: white;
+  font-family: 'Dusha V10'; }
+
+.form-container label {
+  color: #EDEDED;
+  /* gray1 */ }
+
+.form-container a:hover {
+  color: #B40B22;
+  text-decoration: none; }
+
+.form-container small {
+  color: #EC0B2B; }
+
+.red-button {
+  background-color: #B40B22;
+  color: white;
+  margin: 10px 0; }
+
+.blue-button {
+  background-color: #0f4583;
+  color: white; }
+
+.form-buttons {
+  display: flex;
+  flex-direction: column; }
+
+.home-steps {
+  margin: 20px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.home-step {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  text-align: center; }
+
+.home-step-title {
+  font-family: 'Dusha V10'; }
+
+.home-step-image {
+  font-size: 5em; }
+
+.display-none {
+  display: none !important; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+@media only screen and (max-width: 480px) {
+  .App p {
+    font-size: 0.9em; }
+
+  .home-steps {
+    flex-direction: column; }
+
+  .home-step {
+    padding: 0; }
+
+  .home-step-image {
+    font-size: 3em; }
+
+  form {
+    min-width: 250px; } }
+@font-face {
+  font-family: 'Dusha' !important;
+  src: local("Dusha"), url("../../Dusha.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Dusha V10';
+  src: url("../../DushaV5-Regular.woff2") format("woff2"), url("../../DushaV5-Regular.woff") format("woff"), url("../../Dusha.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background: #0f4583 url("../../components/assets/symphony.png") repeat; }
+
+/*
+blue: #0f4583;
+
+red: #B40B22;
+
+gold: #EAE3BA;
+
+gray: #EC0B2B;
+*/
+.group-container {
+  position: relative; }
+
+.group-header {
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  color: #EAE3BA;
+  padding: 15px;
+  margin: 0 -20px;
+  font-family: 'Dusha V10'; }
+
+.group-header h3 {
+  margin: 0; }
+
+.group-header h5 {
+  margin: 0;
+  font-size: 1.2rem; }
+
+.group-header h6 {
+  margin: 0; }
+
+.group-header small {
+  color: lightgray; }
+
+.user-header {
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  color: white;
+  padding: 15px;
+  margin: 0 -20px;
+  font-family: 'Dusha V10'; }
+
+.Correct {
+  color: #18BE06; }
+
+.Incorrect {
+  color: #B40B22; }
+
+@media only screen and (max-width: 480px) {
+  .group-header {
+    padding: 10px; }
+
+  .group-header h3 {
+    font-size: 0.9em; }
+
+  .group-header h5 {
+    font-size: 0.9em; }
+
+  .group-header h6 {
+    font-size: 0.9em; } }
+.knockout-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 5px; }
+
+.knockout-tile p {
+  margin: 0; }
+
+.knockout-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.final-three-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.finals {
+  margin: 0 35px; }
+
+.match-info {
+  flex: 1; }
+
+.match-info small {
+  color: #97989A; }
+
+.kickoff-tile .match-info strong {
+  font-family: 'Dusha V10';
+  font-size: 1em; }
+
+.flag-box {
+  padding: 10px 5px;
+  max-width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.knockout-tile .team-flag {
+  width: 100px; }
+
+.match-team {
+  flex: 1;
+  display: flex;
+  justify-content: center; }
+
+.match-team h4 {
+  margin: 5px; }
+
+.finals {
+  background-color: #E1E5E8;
+  padding: 0 5px; }
+
+.stages-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Dusha V10";
+  font-size: 1rem; }
+
+.stage-btn {
+  margin-right: 10px;
+  margin-bottom: 4px; }
+
+.stage-btn:hover {
+  margin-bottom: 0;
+  border-bottom: 4px #EAE3BA solid;
+  transform: scale(1.03); }
+
+.stage-active {
+  margin-bottom: 0;
+  border-bottom: 4px #B40B22 solid; }
+
+.groups-btn:hover {
+  cursor: pointer; }
+
+.knockout-btn:hover {
+  cursor: pointer; }
+
+.sortby-btn:hover {
+  cursor: pointer; }
+
+@media only screen and (max-width: 1130px) {
+  .knockout-tile {
+    font-size: 0.9rem; }
+    .knockout-tile .team-flag {
+      width: 70px; } }
+@media only screen and (max-width: 850px) {
+  .knockout-tile {
+    margin: 20px 5px;
+    font-size: 0.8rem; }
+    .knockout-tile .team-flag {
+      width: 55px; }
+
+  .stages-container {
+    font-size: 0.9rem; } }
+@media only screen and (max-width: 680px) {
+  .knockout-tile {
+    font-size: 0.7rem; }
+    .knockout-tile .team-flag {
+      width: 50px; } }
+@media only screen and (max-width: 600px) {
+  .knockout-tile {
+    font-size: 0.8rem; }
+    .knockout-tile .team-flag {
+      width: 40px; } }
+@media only screen and (max-width: 550px) {
+  .knockout-tile .team-flag {
+    width: 35px; } }
+@media only screen and (max-width: 500px) {
+  .knockout-tile {
+    margin: 15px 5px; }
+    .knockout-tile .flag-group {
+      flex-direction: column; }
+    .knockout-tile .flag-box {
+      padding: 5px 5px;
+      margin-top: 5px; } }
+.group-tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #EDEDED;
+  /*border: 1px solid #0f4583;*/ }
+
+.group-tab {
+  padding: 10px 5px;
+  flex: 1;
+  /*border-right: 1px solid #0f4583;*/ }
+
+.group-tab:hover {
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  color: #EDEDED;
+  cursor: pointer; }
+
+.group-tab h6 {
+  margin: 0;
+  font-weight: bold !important; }
+
+.league-container {
+  margin-bottom: 50px; }
+
+.league-container th {
+  padding: 5px;
+  border-top: none; }
+
+.league-container table {
+  border: none; }
+
+.league-header {
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  color: white;
+  padding: 10px;
+  /*margin: 0 -20px;*/
+  font-family: 'Dusha V10'; }
+
+.league-header h3 {
+  margin: 0; }
+
+.league-header small {
+  color: lightgray; }
+
+.user-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin: 0 -20px;*/ }
+
+.user-sub {
+  background-color: #B40B22;
+  color: white;
+  padding: 5px 0;
+  font-family: 'Dusha V10'; }
+
+.user-sub-item {
+  flex: 1; }
+
+.user-sub p {
+  margin: 0; }
+
+.user-tile-item {
+  padding: 10px;
+  flex: 1; }
+
+.table thead th {
+  border: none; }
+
+@media only screen and (max-width: 480px) {
+  .table td {
+    padding: 0.50rem; }
+
+  .league-header h3 {
+    font-size: 1.30rem; }
+
+  .table thead th {
+    font-size: 0.9rem; } }
+.matches-container {
+  padding: 0 20px;
+  position: relative; }
+
+.match-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0; }
+
+.match-tile p {
+  margin: 0; }
+
+.match-info {
+  flex: 1; }
+
+.match-info small {
+  color: #97989A; }
+
+.match-info strong {
+  font-family: 'Dusha V10'; }
+
+.flag-box {
+  padding: 10px 5px;
+  max-width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.match-tile .team-flag {
+  width: 100px; }
+
+.team-flag-hover {
+  cursor: pointer; }
+
+.match-team {
+  flex: 1;
+  display: flex;
+  justify-content: center; }
+
+.match-team h4 {
+  margin: 5px; }
+
+.flag-group {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.active {
+  background-color: #EAE3BA;
+  border-radius: 5px; }
+
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+@media only screen and (max-width: 480px) {
+  .match-tile {
+    margin: 20px 0; }
+    .match-tile .team-flag {
+      width: 50px; }
+
+  .fifa-rank {
+    display: none; } }
+@media only screen and (max-width: 320px) {
+  .match-info {
+    flex: 2; }
+
+  .flag-group {
+    flex-direction: column;
+    flex: 1; }
+
+  .fifa-rank {
+    display: inline; } }
+.match-predictions-container {
+  display: table;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12px;
+  background-color: transparent;
+  width: 100%; }
+
+.match-predictions-container p {
+  margin: 0; }
+
+.match-predictions {
+  flex: 1;
+  border-right: 1px solid #c4c6cb;
+  height: 100%;
+  display: table-cell;
+  width: 16.7%; }
+
+.predictions-teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /*border-right: 1px #C4C6CB solid;*/
+  /*border-left: 1px blue solid;*/ }
+
+.predictions-team {
+  flex: 1;
+  overflow: hidden;
+  padding: 5px 2px; }
+
+.predictions-header {
+  background-color: #0f4583;
+  color: white;
+  padding: 7px 3px; }
+
+.active-tab {
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  color: #EDEDED; }
+
+@media only screen and (max-width: 800px) {
+  .match-predictions-container {
+    display: flex;
+    flex-direction: column; }
+
+  .match-predictions {
+    width: 100%; } }
+a:focus {
+  color: white;
+  text-decoration: none; }
+
+/* Main class */
+.navbar-wagon {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  transition: all 0.3s ease;
+  display: flex;
+  height: 60px;
+  padding: 0px 30px;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Dusha V10'; }
+
+.navbar-wagon-fixed {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  width: 100%; }
+
+.navbar-wagon-brand {
+  width: 20px; }
+
+.navbar-wagon-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+#navbar-wagon-menu {
+  margin-left: 15px; }
+
+#navbar-wagon-menu:hover {
+  cursor: pointer; }
+
+/* Navbar item */
+.navbar-wagon-item {
+  flex: 0 1 auto;
+  cursor: pointer;
+  padding: 0 20px; }
+
+/* Navbar standard link */
+.navbar-wagon-link {
+  color: white;
+  font-size: 14px;
+  font-weight: lighter; }
+
+.navbar-wagon-link:hover {
+  color: #da552f;
+  text-decoration: none; }
+
+/* Navbar right button */
+.navbar-wagon-button {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 20em;
+  line-height: 40px;
+  background-color: #D23333;
+  color: white;
+  font-size: 14px;
+  border: 2px solid #D23333; }
+
+.navbar-wagon-button:hover {
+  color: white;
+  background: #D23333;
+  border-color: #ac2626; }
+
+/* Navbar dropdown menu */
+.navbar-wagon-dropdown-menu {
+  margin-top: 15px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6; }
+
+.navbar-wagon-dropdown-menu li > a {
+  transition: color 0.3s ease;
+  font-weight: lighter !important;
+  color: #999999 !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  padding: 10px 20px; }
+
+.navbar-wagon-dropdown-menu li > a:hover {
+  background: transparent !important;
+  color: black !important; }
+
+.navbar-wagon-dropdown-menu:before {
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  right: 10px;
+  top: -6px;
+  background-color: white;
+  transform: rotate(45deg);
+  border-left: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6; }
+
+.navbar-mobile {
+  color: white; }
+
+.subnav-wagon {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.subnav-spacing {
+  padding: 0 15px; }
+
+.subnav-border-right {
+  border-right: 1px solid white; }
+
+.subnav-wagon-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.subnav-wagon-link {
+  color: #EDEDED;
+  font-size: 16px;
+  font-weight: normal; }
+
+.subnav-wagon-link:hover {
+  color: #EAE3BA;
+  text-decoration: none; }
+
+.subnav-wagon-link:focus {
+  color: #EDEDED; }
+
+.subnav-mobile {
+  color: white;
+  background: white;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  height: 40px; }
+
+.dropdown-caret {
+  margin-left: 3px;
+  padding-left: 3px;
+  padding-right: 3px; }
+
+.dropdown-caret:hover {
+  cursor: pointer; }
+
+.subnav-icon {
+  margin-right: 5px; }
+
+.avatar {
+  width: 35px;
+  border-radius: 50%; }
+
+.avatar-large {
+  width: 50px;
+  border-radius: 50%; }
+
+.avatar-bordered {
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: white 1px solid; }
+
+.avatar-square {
+  width: 30px;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: white 1px solid; }
+
+@media only screen and (max-width: 630px) {
+  .navbar-wagon {
+    padding: 0 10px; }
+    .navbar-wagon p {
+      font-size: 1.1em; }
+
+  .navbar-wagon-brand img {
+    width: 25px; }
+
+  .navbar-mobile {
+    padding: 0 10px; }
+
+  .subnav-wagon-link {
+    font-size: 12px; }
+
+  .subnav-spacing {
+    padding: 0 7px; }
+
+  .subnav-icon {
+    margin-right: 3px; } }
+
+/*# sourceMappingURL=index.css.map */

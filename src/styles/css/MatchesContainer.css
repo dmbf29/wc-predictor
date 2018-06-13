@@ -1,0 +1,78 @@
+.matches-container {
+  padding: 0 20px;
+  position: relative; }
+
+.match-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0; }
+
+.match-tile p {
+  margin: 0; }
+
+.match-info {
+  flex: 1; }
+
+.match-info small {
+  color: #97989A; }
+
+.match-info strong {
+  font-family: 'Dusha V10'; }
+
+.flag-box {
+  padding: 10px 5px;
+  max-width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.match-tile .team-flag {
+  width: 100px; }
+
+.team-flag-hover {
+  cursor: pointer; }
+
+.match-team {
+  flex: 1;
+  display: flex;
+  justify-content: center; }
+
+.match-team h4 {
+  margin: 5px; }
+
+.flag-group {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.active {
+  background-color: #EAE3BA;
+  border-radius: 5px; }
+
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+@media only screen and (max-width: 480px) {
+  .match-tile {
+    margin: 20px 0; }
+    .match-tile .team-flag {
+      width: 50px; }
+
+  .fifa-rank {
+    display: none; } }
+@media only screen and (max-width: 320px) {
+  .match-info {
+    flex: 2; }
+
+  .flag-group {
+    flex-direction: column;
+    flex: 1; }
+
+  .fifa-rank {
+    display: inline; } }
+
+/*# sourceMappingURL=MatchesContainer.css.map */

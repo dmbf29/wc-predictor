@@ -1,5 +1,6 @@
 .matches-container {
   padding: 0 20px;
+  position: relative;
 }
 
 .match-tile {
@@ -37,8 +38,10 @@
   justify-content: center;
 }
 
-.team-flag {
-  width: 100px;
+.match-tile {
+  .team-flag {
+    width: 100px;
+  }
 }
 
 .team-flag-hover {
@@ -47,6 +50,8 @@
 
 .match-team {
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 .match-team h4 {
   margin: 5px;
@@ -63,14 +68,20 @@
   background-color: #EAE3BA;
   border-radius: 5px;
 }
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 @media only screen and (max-width : 480px) {
-  .team-flag {
-    width: 50px;
-  }
   .match-tile {
+    .team-flag {
+      width: 50px;
+    }
     margin: 20px 0;
   }
+
   .fifa-rank {
     display: none;
   }

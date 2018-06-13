@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+.App {
+  text-align: center;
+  color: #0f4583;
+  font-family: 'Open Sans';
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;*/
+  min-height: 95vh; }
+
+.doug {
+  position: absolute;
+  bottom: -38px;
+  right: 7px;
+  color: #AFAD90; }
+
+.doug:hover {
+  text-decoration: none;
+  color: #0f4583; }
+
+.App-header {
+  height: 20vh;
+  /*padding: 20px 0;*/
+  margin: 20px 10px;
+  color: white;
+  background: transparent;
+  background-image: url("../../components/assets/banner.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.App-header img {
+  height: 25vh; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+form {
+  min-width: 300px; }
+
+.timezone-picker {
+  width: 100%; }
+
+.timezone-picker-textfield {
+  background-color: white; }
+
+.form-container {
+  margin: 20px 0 0px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  padding: 20px 0; }
+
+.form-container a {
+  color: white; }
+
+.form-container h3 {
+  color: white;
+  font-family: 'Dusha V10'; }
+
+.form-container label {
+  color: #EDEDED;
+  /* gray1 */ }
+
+.form-container a:hover {
+  color: #B40B22;
+  text-decoration: none; }
+
+.form-container small {
+  color: #EC0B2B; }
+
+.red-button {
+  background-color: #B40B22;
+  color: white;
+  margin: 10px 0; }
+
+.blue-button {
+  background-color: #0f4583;
+  color: white; }
+
+.form-buttons {
+  display: flex;
+  flex-direction: column; }
+
+.home-steps {
+  margin: 20px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.home-step {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  text-align: center; }
+
+.home-step-title {
+  font-family: 'Dusha V10'; }
+
+.home-step-image {
+  font-size: 5em; }
+
+.display-none {
+  display: none !important; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+@media only screen and (max-width: 480px) {
+  .App p {
+    font-size: 0.9em; }
+
+  .home-steps {
+    flex-direction: column; }
+
+  .home-step {
+    padding: 0; }
+
+  .home-step-image {
+    font-size: 3em; }
+
+  form {
+    min-width: 250px; } }
+
+/*# sourceMappingURL=App.css.map */

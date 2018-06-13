@@ -1,0 +1,50 @@
+.group-container {
+  position: relative; }
+
+.group-header {
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  color: #EAE3BA;
+  padding: 15px;
+  margin: 0 -20px;
+  font-family: 'Dusha V10'; }
+
+.group-header h3 {
+  margin: 0; }
+
+.group-header h5 {
+  margin: 0;
+  font-size: 1.2rem; }
+
+.group-header h6 {
+  margin: 0; }
+
+.group-header small {
+  color: lightgray; }
+
+.user-header {
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  color: white;
+  padding: 15px;
+  margin: 0 -20px;
+  font-family: 'Dusha V10'; }
+
+.Correct {
+  color: #18BE06; }
+
+.Incorrect {
+  color: #B40B22; }
+
+@media only screen and (max-width: 480px) {
+  .group-header {
+    padding: 10px; }
+
+  .group-header h3 {
+    font-size: 0.9em; }
+
+  .group-header h5 {
+    font-size: 0.9em; }
+
+  .group-header h6 {
+    font-size: 0.9em; } }
+
+/*# sourceMappingURL=GroupContainer.css.map */

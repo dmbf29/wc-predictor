@@ -26,7 +26,7 @@
   margin: 20px 10px;
   color: white;
   background: transparent;
-  background-image: url('./assets/banner.png');
+  background-image: url('../../components/assets/banner.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,7 +60,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #0f4583 url('./fwc_darkbluebg.png') repeat;
+  background: #0f4583 url('../../components/assets/fwc_darkbluebg.png') repeat;
   padding: 20px 0;
 }
 
@@ -121,7 +121,6 @@ form {
 
 .home-step-image {
   font-size: 5em;
-  color: $purple;
 }
 
 .display-none {
