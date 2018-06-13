@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import './LeaguePredictionsContainer.css';
 import MatchPredictions from "./MatchPredictions";
 
 class LeaguePredictionsContainer extends Component {

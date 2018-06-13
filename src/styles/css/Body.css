@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Dusha' !important;
+  src: local("Dusha"), url("../../Dusha.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Dusha V10';
+  src: url("../../DushaV5-Regular.woff2") format("woff2"), url("../../DushaV5-Regular.woff") format("woff"), url("../../Dusha.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background: #0f4583 url("../../components/assets/symphony.png") repeat; }
+
+/*
+blue: #0f4583;
+
+red: #B40B22;
+
+gold: #EAE3BA;
+
+gray: #EC0B2B;
+*/
+
+/*# sourceMappingURL=Body.css.map */

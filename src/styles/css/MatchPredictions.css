@@ -4,50 +4,45 @@
   align-items: baseline;
   font-size: 12px;
   background-color: transparent;
-  width: 100%;
-}
+  width: 100%; }
+
 .match-predictions-container p {
-  margin: 0;
-}
+  margin: 0; }
+
 .match-predictions {
   flex: 1;
   border-right: 1px solid #c4c6cb;
   height: 100%;
   display: table-cell;
-  width: 16.7%;
-}
+  width: 16.7%; }
 
 .predictions-teams {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   /*border-right: 1px #C4C6CB solid;*/
-  /*border-left: 1px blue solid;*/
-}
+  /*border-left: 1px blue solid;*/ }
 
 .predictions-team {
   flex: 1;
   overflow: hidden;
-  padding: 5px 2px
-}
+  padding: 5px 2px; }
 
 .predictions-header {
   background-color: #0f4583;
   color: white;
-  padding: 7px 3px;
-}
+  padding: 7px 3px; }
 
 .active-tab {
-  background: #0f4583 url('./fwc_darkbluebg.png') repeat;
-  color: #EDEDED;
-}
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  color: #EDEDED; }
 
-@media only screen and (max-width :800px) {
+@media only screen and (max-width: 800px) {
   .match-predictions-container {
     display: flex;
-    flex-direction: column;
-  }
+    flex-direction: column; }
+
   .match-predictions {
-    width: 100%;
-  }
-}
+    width: 100%; } }
+
+/*# sourceMappingURL=MatchPredictions.css.map */

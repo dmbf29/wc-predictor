@@ -1,0 +1,22 @@
+.group-tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #EDEDED;
+  /*border: 1px solid #0f4583;*/ }
+
+.group-tab {
+  padding: 10px 5px;
+  flex: 1;
+  /*border-right: 1px solid #0f4583;*/ }
+
+.group-tab:hover {
+  background: #0f4583 url("../../components/assets/fwc_darkbluebg.png") repeat;
+  color: #EDEDED;
+  cursor: pointer; }
+
+.group-tab h6 {
+  margin: 0;
+  font-weight: bold !important; }
+
+/*# sourceMappingURL=LeaguePredictionsContainer.css.map */

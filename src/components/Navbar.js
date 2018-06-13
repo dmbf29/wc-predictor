@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './Navbar.css';
 import avatar from './assets/avatar.png';
 import icon from './assets/icon.png';
 import { Link } from 'react-router-dom'

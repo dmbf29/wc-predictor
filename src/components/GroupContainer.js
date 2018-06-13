@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './GroupContainer.css';
 import TeamPrediction from './TeamPrediction'
 import DrawPrediction from './DrawPrediction'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'

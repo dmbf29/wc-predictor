@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import './MatchesContainer.css'
 import GroupContainer from './GroupContainer'
 import KnockoutContainer from './KnockoutContainer'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -111,9 +110,6 @@ class MatchesContainer extends Component {
         }
         {this.state.sort === "knockouts" &&
           <div className="group-container" id='matchesSort' key='matchesSort'>
-            <div className="group-header">
-              <h3>Knockout Round</h3>
-            </div>
             <KnockoutContainer token={this.state.token} knockout_groups={this.state.knockout_groups} canEdit="false" />
           </div>
         }
