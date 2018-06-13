@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import './MatchesContainer.css';
+import './MatchesContainer.css'
 import GroupContainer from './GroupContainer'
+import KnockoutContainer from './KnockoutContainer'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 class MatchesContainer extends Component {
@@ -34,12 +35,12 @@ class MatchesContainer extends Component {
     })
   }
 
-  getKnockouts() {
+  getKnockoutGroups() {
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + '/api/v1/knockouts', { headers: { 'Authorization': token }})
     .then(response => {
       console.log(response)
-      this.setState({knockouts: response.data.knockouts, token: token})
+      this.setState({knockout_groups: response.data.knockouts})
     })
     .catch(error => {console.log(error)
       this.addErrors();
@@ -62,9 +63,9 @@ class MatchesContainer extends Component {
     this.getGroups()
   }
 
-  sortByKnockouts() {
+  sortByKnockoutGroups() {
     this.setState({sort: "knockouts"})
-    this.getKnockouts()
+    this.getKnockoutGroups()
   }
 
   componentDidMount() {
@@ -75,8 +76,8 @@ class MatchesContainer extends Component {
       <div className="matches-container">
         <div className="nav-btns">
           <div className="stages-container">
-            <div className="groups-btn" onClick={ this.sortByGroups.bind(this) }>Groups</div>
-            <div className="knockout-btn" onClick={ this.sortByKnockouts.bind(this) }>Knockout</div>
+            <div className="groups-btn" onClick={ this.sortByGroups.bind(this) }>Group Stage</div>
+            <div className="knockout-btn" onClick={ this.sortByKnockoutGroups.bind(this) }>Knockout Bracket</div>
           </div>
           <div className="sortby-btn" onClick={this.state.sort === "time" ? this.sortByGroups.bind(this) : this.sortByTime.bind(this) }><FontAwesomeIcon icon="sort" /> { this.state.sort === "time" ? "Groups" : "Kickoff Time" }</div>
         </div>
@@ -106,6 +107,14 @@ class MatchesContainer extends Component {
               <h3>Matches</h3>
             </div>
             <GroupContainer token={this.state.token} matches={this.state.matches} canEdit="true" />
+          </div>
+        }
+        {this.state.sort === "knockouts" &&
+          <div className="group-container" id='matchesSort' key='matchesSort'>
+            <div className="group-header">
+              <h3>Knockout Round</h3>
+            </div>
+            <KnockoutContainer token={this.state.token} knockout_groups={this.state.knockout_groups} canEdit="false" />
           </div>
         }
       </div>
