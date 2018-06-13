@@ -7,12 +7,12 @@ class KnockoutContainer extends Component {
   render() {
     return (
       <div>
-        { this.props.knockout_groups === null &&
+        { this.props.knockout_groups[0] === null &&
           <div className="container">
             <h1><FontAwesomeIcon icon="spinner" spin /></h1>
           </div>
         }
-        { this.props.knockout_groups &&
+        { this.props.knockout_groups[0] !== undefined &&
             <div id="knockout-container">
               <div className="group-header">
                 <h5 className="round-header">ROUND OF 16 | A-D</h5>
