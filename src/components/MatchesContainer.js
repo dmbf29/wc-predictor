@@ -7,7 +7,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 class MatchesContainer extends Component {
   constructor() {
     super()
-    this.state = {groups: [], sort: "groups", matches: [], knockouts: []}
+    this.state = {groups: [], sort: "groups", matches: [], knockout_groups: []}
     this.getGroups()
   }
 
