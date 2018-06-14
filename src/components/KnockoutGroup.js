@@ -36,7 +36,7 @@ class KnockoutGroup extends Component {
               { match.finished === true &&
                 <small>{match.team_home_score} - {match.team_away_score} | <span className={this.predictionResult(match)} >{ this.predictionResult(match) }</span></small>
               }
-              <p><em>{match.kickoff_time}</em></p>
+              <p className="match-kickoff">{match.kickoff_time}</p>
             </div>
             <div className="flag-group">
               <div className="match-home match-team">
