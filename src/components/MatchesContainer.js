@@ -9,6 +9,7 @@ class MatchesContainer extends Component {
     super()
     this.state = {groups: [], sort: "groups", matches: [], knockout_groups: []}
     this.getGroups()
+
   }
 
   getGroups() {
