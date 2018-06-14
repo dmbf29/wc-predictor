@@ -210,7 +210,10 @@ gray: #EC0B2B;
     font-size: 0.9em; }
 
   .group-header h6 {
-    font-size: 0.9em; } }
+    font-size: 0.9em; }
+
+  .kickoff-lock {
+    top: 39px; } }
 .knockout-tile {
   display: flex;
   flex-direction: column;
