@@ -15,7 +15,9 @@ class GroupContainer extends Component {
   }
 
   predictionResult = (match) => {
-    if(match.prediction.correct === true){
+    if(match.prediction === null){
+      return "No prediction"
+    } else if(match.prediction.correct === true){
       return "Correct"
     } else if (match.prediction.correct === false){
       return"Incorrect"

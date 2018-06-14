@@ -23,15 +23,19 @@ class DrawPrediction extends Component {
   render() {
     const canEdit = this.props.canEdit
     const noPredictionMade = this.props.match.prediction == null
-    const isInactive = () => {
-      if(noPredictionMade) {
-        return true;
-      } else if(this.props.match.prediction.draw === true) {
-        return false;
-      } else {
-        return true;
+
+    const predictionStatus = () => {
+      if(this.props.match.prediction === null) {
+        return "inactive"
+      } else if (this.props.match.draw === true ) {
+        return "correct-prediction"
+      } else if (this.props.match.prediction.draw === true && this.props.match.prediction.correct === true ) {
+        return "correct-prediction"
+      } else if (this.props.match.prediction.draw === true && this.props.match.prediction.correct === false ) {
+        return "incorrect-prediction"
       }
     }
+
     const addNewPrediction = () => {
       if(canEdit === "true") {
         axios.post(
@@ -79,7 +83,7 @@ class DrawPrediction extends Component {
       }
     }
     return (
-        <div className={`flag-box draw ${(isInactive() ? ("inactive") : ("active"))}`} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
+      <div className={`flag-box draw ${predictionStatus()}`} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
         <img className={"team-flag " + (canEdit === "true" ? "team-flag-hover" : "locked")  } src={require(`./flags/draw1.png`)} alt="team-flag" />
       </div>
     );

@@ -68,6 +68,15 @@
   background-color: #EAE3BA;
   border-radius: 5px;
 }
+.correct-prediction {
+  background-color: #5bd3657a;
+  border-radius: 5px;
+}
+.incorrect-prediction {
+  background-color: #e3361873;
+  border-radius: 5px;
+}
+
 .nav-btns {
   display: flex;
   justify-content: space-between;

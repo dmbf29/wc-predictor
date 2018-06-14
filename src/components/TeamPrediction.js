@@ -24,15 +24,21 @@ class TeamPrediction extends Component {
   render() {
     const canEdit = this.props.canEdit
     const noPredictionMade = this.props.match.prediction == null
-    const isInactive = () => {
-      if(noPredictionMade) {
-        return true;
-      } else if(this.props.match.prediction.winner_id === this.props.team.id) {
-        return false;
-      } else {
-        return true;
+
+    const predictionStatus = () => {
+      if(this.props.match.prediction === null) {
+        return "inactive"
+      } else if (this.props.match.prediction.correct === true && this.props.match.prediction.winner_id === this.props.team.id) {
+        return "correct-prediction"
+      } else if (this.props.match.prediction.correct === false && this.props.match.prediction.winner_id === this.props.team.id) {
+        return "incorrect-prediction"
+      } else if (this.props.match.prediction.correct === false && this.props.match.winner_id === this.props.team.id) {
+        return "correct-prediction"
+      } else if (this.props.match.prediction.correct === null && this.props.match.prediction.winner_id === this.props.team.id) {
+        return "active"
       }
     }
+
     const addNewPrediction = () => {
       if(canEdit === "true") {
         axios.post(
@@ -79,7 +85,7 @@ class TeamPrediction extends Component {
       }
     }
     return (
-      <div className={'flag-box ' + this.props.team.abbrev + ' ' + (isInactive() ? ("inactive") : ("active"))} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
+      <div className={`flag-box ${this.props.team.abbrev} ${predictionStatus()}`} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
         <img className={"team-flag " + (canEdit === "true" ? "team-flag-hover" : "locked")  } src={ this.tryRequire(`./flags/${this.props.team.abbrev.toLowerCase()}.png`) ? require(`./flags/${this.props.team.abbrev.toLowerCase()}.png`) : require('./flags/placeholder.png')} alt="team-flag" />
       </div>
     );
