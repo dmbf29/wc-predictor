@@ -8,7 +8,7 @@ class MatchesContainer extends Component {
   constructor() {
     super()
     this.state = {groups: [], sort: "groups", matches: [], knockout_groups: []}
-    this.getGroups()
+    // this.getGroups()
   }
 
   getGroups() {
@@ -49,7 +49,17 @@ class MatchesContainer extends Component {
   addErrors() {
     const matchesContainer = document.querySelector(".matches-container");
     matchesContainer.classList.add('display-none')
-    matchesContainer.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>There was an error loading matches.</small><br /><small style='padding-bottom:5px;'>Try signing in again.</small>");
+    matchesContainer.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>There was an error loading matches.</small><br /><small style='padding-bottom:5px;'>Try signing in again.</small><br /><br /><button class='red-button btn'>Sign In</button>");
+    const button = document.querySelector('.red-button');
+    button.addEventListener("click", (event) => {
+      button.classList.add('display-none')
+      this.signOut();
+    });
+  }
+
+  signOut() {
+    delete localStorage.jwt
+    this.props.history.push(`/`)
   }
 
   sortByTime() {

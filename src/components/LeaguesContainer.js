@@ -56,8 +56,18 @@ class LeaguesContainer extends Component {
   }
 
   addErrors() {
-    const MatchesContainer = document.querySelector(".container");
-    MatchesContainer.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>There was an error loading leagues.</small><br /><small style='padding-bottom:5px;'>Try signing in again.</small>");
+    const matchesContainer = document.querySelector(".container");
+    matchesContainer.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>There was an error loading matches.</small><br /><small style='padding-bottom:5px;'>Try signing in again.</small><br /><br /><button class='red-button btn'>Sign In</button>");
+    const button = document.querySelector('.red-button');
+    button.addEventListener("click", (event) => {
+      button.classList.add('display-none')
+      this.signOut();
+    });
+  }
+
+  signOut() {
+    delete localStorage.jwt
+    this.props.history.push(`/`)
   }
 
   render() {
