@@ -22,7 +22,7 @@ class LeagueCreate extends Component {
     )
     .then(response => {
       console.log(response.data)
-      this.props.history.push(`/leagues`)
+      this.props.history.push(`/leaderboard`)
     })
     .catch(error => {console.log(error)
       this.addErrors();

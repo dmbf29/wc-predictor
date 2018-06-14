@@ -83,7 +83,7 @@ class LeaguesContainer extends Component {
             </div>
           </div>
         }
-        {this.state.leagues.map(league => (
+        { this.state.leagues && this.state.leagues.map(league => (
           <div className="league-container display-none" key={league.id}>
             <div className="league-header">
               <h3>{league.name}</h3>
@@ -100,7 +100,7 @@ class LeaguesContainer extends Component {
                 </tr>
               </thead>
               <tbody>
-                {league.users.map((user, index) => (
+                { league.users && league.users.map((user, index) => (
                   <tr key={user.id} onClick={() => { this.visitPredictions(user) }}>
                     <td>{index + 1}</td>
                     <td>{user.name}</td>

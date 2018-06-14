@@ -34,7 +34,7 @@ class Navbar extends Component {
           { localStorage.jwt !== undefined &&
             <div>
               <Link to='/' className="subnav-wagon-item subnav-wagon-link subnav-spacing subnav-border-right">PREDICTIONS</Link>
-              <Link to='/leagues' className="subnav-wagon-item subnav-wagon-link subnav-spacing subnav-border-right">LEAGUES</Link>
+              <Link to='/leaderboard' className="subnav-wagon-item subnav-wagon-link subnav-spacing subnav-border-right">LEADERBOARD</Link>
             </div>
           }
         </div>

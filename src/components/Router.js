@@ -23,6 +23,10 @@ const Router = () => (
     }
     <Route exact path="/leagues" component={LeaguesContainer} />
     { localStorage.jwt === undefined &&
+      <Route exact path="/leaderboard" component={SignIn} />
+    }
+    <Route exact path="/leaderboard" component={LeaguesContainer} />
+    { localStorage.jwt === undefined &&
       <Route exact path="/league_create" component={SignIn} />
     }
     <Route exact path="/league_create" component={LeagueCreate} />
