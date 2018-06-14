@@ -33,6 +33,8 @@ class DrawPrediction extends Component {
         return "correct-prediction"
       } else if (this.props.match.prediction.draw === true && this.props.match.prediction.correct === false ) {
         return "incorrect-prediction"
+      } else if (this.props.match.prediction.correct === null && this.props.match.prediction.draw === true) {
+        return "active"
       }
     }
 
