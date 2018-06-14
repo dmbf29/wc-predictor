@@ -73,6 +73,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.locked:hover {
+  cursor: not-allowed;
+}
 
 @media only screen and (max-width : 480px) {
   .match-tile {

@@ -101,6 +101,7 @@ class MatchesContainer extends Component {
               <div className="group-header">
                 <h3>{group.name}</h3>
               </div>
+              <small className="kickoff-lock">Predictions lock at kickoff</small>
               <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} canEdit="true" />
             </div>
           ))

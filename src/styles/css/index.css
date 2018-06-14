@@ -193,6 +193,12 @@ gray: #EC0B2B;
 .Incorrect {
   color: #B40B22; }
 
+.kickoff-lock {
+  color: #96969A;
+  position: absolute;
+  top: 68px;
+  left: -10px; }
+
 @media only screen and (max-width: 480px) {
   .group-header {
     padding: 10px; }
@@ -459,6 +465,9 @@ gray: #EC0B2B;
   display: flex;
   justify-content: space-between;
   align-items: center; }
+
+.locked:hover {
+  cursor: not-allowed; }
 
 @media only screen and (max-width: 480px) {
   .match-tile {

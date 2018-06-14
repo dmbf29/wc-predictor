@@ -80,7 +80,7 @@ class TeamPrediction extends Component {
     }
     return (
       <div className={'flag-box ' + this.props.team.abbrev + ' ' + (isInactive() ? ("inactive") : ("active"))} onClick={() => { noPredictionMade ? (addNewPrediction()) : (updatePrediction(this.props.match.prediction.id)) }}>
-        <img className={"team-flag " + (canEdit === "true" ? "team-flag-hover" : "")  } src={ this.tryRequire(`./flags/${this.props.team.abbrev.toLowerCase()}.png`) ? require(`./flags/${this.props.team.abbrev.toLowerCase()}.png`) : require('./flags/placeholder.png')} alt="team-flag" />
+        <img className={"team-flag " + (canEdit === "true" ? "team-flag-hover" : "locked")  } src={ this.tryRequire(`./flags/${this.props.team.abbrev.toLowerCase()}.png`) ? require(`./flags/${this.props.team.abbrev.toLowerCase()}.png`) : require('./flags/placeholder.png')} alt="team-flag" />
       </div>
     );
   }
