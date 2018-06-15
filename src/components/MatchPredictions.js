@@ -13,13 +13,13 @@ class MatchPredictions extends Component {
       <div className="match-predictions">
         <div className="predictions-teams">
           <div className="predictions-teams-home predictions-team predictions-header">
-            <p>{this.props.match.team_home.abbrev}</p>
+            <p className={ this.props.match.winner_id === this.props.match.team_home.id ? "Correct" : "" } >{this.props.match.team_home.abbrev}</p>
           </div>
           <div className="predictions-teams-vs predictions-team predictions-header">
-            <p>vs.</p>
+            <p className={ this.props.match.draw === true ? "Correct" : "" }>vs.</p>
           </div>
           <div className="predictions-teams-away predictions-team predictions-header">
-            <p>{this.props.match.team_away.abbrev}</p>
+            <p className={ this.props.match.winner_id === this.props.match.team_away.id ? "Correct" : "" }>{this.props.match.team_away.abbrev}</p>
           </div>
         </div>
         <div className="predictions-teams">

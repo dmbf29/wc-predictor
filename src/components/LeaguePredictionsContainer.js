@@ -41,7 +41,7 @@ class LeaguePredictionsContainer extends Component {
     return (
       <div>
         <div className="group-tabs">
-          { this.props.groups && this.props.groups.map((group, index) => (
+          { this.props.groups && this.props.groups.map((group) => (
             <div className={`group-tab tab-${this.props.league.id}-${group.id}` } key={`tab-${this.props.league.id}-${group.id}`} onClick={(e) => { this.openPredictionsContainer(group.id, e) }}>
               <h6 className={`tab-${this.props.league.id}-${group.id}`}>{group.name.split(' ')[1]}</h6>
             </div>
