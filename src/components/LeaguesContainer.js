@@ -32,6 +32,7 @@ class LeaguesContainer extends Component {
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + `/api/v1/group_names`, { headers: { 'Authorization': token }})
     .then(response => {
+      // console.log(response)
       this.setState({groups: response.data.groups})
     })
     .catch(error => console.log(error))

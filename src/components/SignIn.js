@@ -40,7 +40,13 @@ class SignIn extends Component {
   addErrors() {
     console.log("sign in error!")
     const form = document.querySelector("form");
-    form.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>Incorrect username/password</small>");
+    const previousErrors = document.querySelectorAll(".sign-error");
+    if (previousErrors) {
+      previousErrors.forEach((errorMessage) => {
+        errorMessage.classList.add('display-none');
+      })
+    }
+    form.insertAdjacentHTML("beforebegin", "<div class='sign-error'><small style='padding-bottom:5px;'>Incorrect username/password</small></div<");
   }
 
   render() {
