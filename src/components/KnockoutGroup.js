@@ -27,7 +27,7 @@ class KnockoutGroup extends Component {
           <div className="knockout-tile" id={'match' + match.id} key={match.id} >
             <div className="match-info">
               <p><strong>{match.team_home.name} vs. {match.team_away.name}</strong></p>
-              { match.started === false &&
+              { match.started === false && match.round.started === true &&
                 <small><span className="fifa-rank">Fifa Rank | </span>{match.team_home.ranking} vs. {match.team_away.ranking}</small>
               }
               { match.started === true && match.finished === false &&
