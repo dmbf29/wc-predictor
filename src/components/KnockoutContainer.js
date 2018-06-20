@@ -77,7 +77,7 @@ class KnockoutContainer extends Component {
               <div className="quarterfinals knockout-group">
                 <KnockoutGroup
                   token={this.props.token}
-                  matches={this.props.knockout_groups[3].matches}
+                  matches={this.props.knockout_groups[3].matches.reverse()}
                   canEdit={this.props.canEdit}
                   knockout_groups={this.props.knockout_groups}
                   getKnockoutGroups={this.props.getKnockoutGroups} />
