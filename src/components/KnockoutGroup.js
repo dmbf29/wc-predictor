@@ -56,7 +56,7 @@ class KnockoutGroup extends Component {
                   createPrediction={this.createMatchPrediction}
                   match={match}
                   team={match.prediction === null || match.prediction.team_home === null ? match.team_home : match.prediction.team_home}
-                  canEdit={ match.started === true ? "false" : "true" } />
+                  canEdit={ match.started === true ? "false" : this.props.canEdit } />
               </div>
               <div className="match-away match-team">
                 <TeamPrediction
@@ -64,7 +64,7 @@ class KnockoutGroup extends Component {
                   createPrediction={this.createMatchPrediction}
                   match={match}
                   team={match.prediction === null || match.prediction.team_away === null ? match.team_away : match.prediction.team_away}
-                  canEdit={ match.started === true ? "false" : "true" } />
+                  canEdit={ match.started === true ? "false" : this.props.canEdit } />
               </div>
             </div>
           </div>
