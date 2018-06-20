@@ -21,10 +21,17 @@ class TeamPrediction extends Component {
     }
   };
 
+  loserId() {
+    if (this.props.team.id === this.props.match.team_home.id) {
+      return this.props.match.team_away.id
+    } else {
+      return this.props.match.team_home.id
+    }
+  }
+
   render() {
     const canEdit = this.props.canEdit
     const noPredictionMade = this.props.match.prediction == null
-
     const predictionStatus = () => {
       if(this.props.match.prediction === null) {
         return "inactive"
@@ -46,6 +53,7 @@ class TeamPrediction extends Component {
           { prediction:
             {
               winner_id: this.props.team.id,
+              loser_id: this.loserId(),
               match_id: this.props.match.id,
               round_id: this.props.match.round.id,
               draw: false
@@ -68,7 +76,7 @@ class TeamPrediction extends Component {
         { prediction:
           {
             winner_id: this.props.team.id,
-            loser_id: null,
+            loser_id: this.loserId(),
             match_id: this.props.match.id,
             round_id: this.props.match.round.id,
             draw: false
