@@ -34,7 +34,6 @@ class LeaguesContainer extends Component {
     .then(response => {
       // console.log(response)
       this.setState({groups: response.data.groups})
-      console.log(this.state.groups)
     })
     .catch(error => console.log(error))
   }

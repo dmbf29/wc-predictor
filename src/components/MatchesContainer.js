@@ -16,7 +16,6 @@ class MatchesContainer extends Component {
     let token = "Bearer " + localStorage.getItem("jwt")
     axios.get(localStorage.url + '/api/v1/groups.json', { headers: { 'Authorization': token }})
     .then(response => {
-      console.log(response)
       this.setState({groups: response.data.groups, token: token})
     })
     .catch(error => {console.log(error)
@@ -103,7 +102,12 @@ class MatchesContainer extends Component {
                 <h3>{group.name}</h3>
               </div>
               <small className="kickoff-lock">Predictions lock at kickoff</small>
-              <GroupContainer key={group.id} token={this.state.token} group={group} matches={group.matches} canEdit="true" />
+              <GroupContainer
+                key={group.id}
+                token={this.state.token}
+                group={group}
+                matches={group.matches}
+                canEdit="true" />
             </div>
           ))
         }
@@ -113,7 +117,10 @@ class MatchesContainer extends Component {
               <h3>Matches</h3>
             </div>
             <small className="kickoff-lock">Predictions lock at kickoff</small>
-            <GroupContainer token={this.state.token} matches={this.state.matches} canEdit="true" />
+            <GroupContainer
+              token={this.state.token}
+              matches={this.state.matches}
+              canEdit="true" />
           </div>
         }
         { this.state.sort === "time" && this.state.matches.length === 0 &&
@@ -123,7 +130,11 @@ class MatchesContainer extends Component {
         }
         {this.state.sort === "knockouts" &&
           <div className="group-container" id='matchesSort' key='matchesSort'>
-            <KnockoutContainer token={this.state.token} knockout_groups={this.state.knockout_groups} canEdit="false" />
+            <KnockoutContainer
+              token={this.state.token}
+              getKnockoutGroups={this.getKnockoutGroups.bind(this)}
+              knockout_groups={this.state.knockout_groups}
+              canEdit="false" />
           </div>
         }
       </div>
