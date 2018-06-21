@@ -20,6 +20,7 @@ class MatchesContainer extends Component {
     })
     .catch(error => {console.log(error)
       this.addErrors();
+      delete localStorage.jwt;
     })
   }
 
@@ -43,6 +44,7 @@ class MatchesContainer extends Component {
     })
     .catch(error => {console.log(error)
       this.addErrors();
+      delete localStorage.jwt;
     })
   }
 
