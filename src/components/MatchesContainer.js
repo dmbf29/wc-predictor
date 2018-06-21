@@ -49,10 +49,11 @@ class MatchesContainer extends Component {
   addErrors() {
     const matchesContainer = document.querySelector(".matches-container");
     matchesContainer.classList.add('display-none')
-    matchesContainer.insertAdjacentHTML("beforebegin", "<small style='padding-bottom:5px;'>There was an error loading matches.</small><br /><small style='padding-bottom:5px;'>Try signing in again.</small><br /><br /><button class='red-button btn'>Sign In</button>");
+    matchesContainer.insertAdjacentHTML("beforebegin", "<div id='error-messages'><small style='padding-bottom:5px;'>There was an error loading matches.</small><br /><small style='padding-bottom:5px;'>Try signing in again.</small><br /><br /><button class='red-button btn'>Sign In</button></div>");
     const button = document.querySelector('.red-button');
     button.addEventListener("click", (event) => {
-      button.classList.add('display-none')
+      const errorMessages = document.getElementById("error-messages");
+      errorMessages.parentNode.removeChild(errorMessages)
       this.signOut();
     });
   }
