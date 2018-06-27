@@ -137,7 +137,7 @@ class MatchesContainer extends Component {
               token={this.state.token}
               getKnockoutGroups={this.getKnockoutGroups.bind(this)}
               knockout_groups={this.state.knockout_groups}
-              canEdit="false" />
+              canEdit="true" />
           </div>
         }
       </div>
