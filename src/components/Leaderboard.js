@@ -25,7 +25,7 @@ class Leaderboard extends Component {
                   <tr key={`leader-${leader.id}`} onClick={() => { this.props.visitPredictions(leader) }}>
                     <td>{leader.position}</td>
                     <td>{leader.name}</td>
-                    <td>{leader.knockout_picks}</td>
+                    <td>{leader.knockout_picks} / 15</td>
                     <td>{leader.score_sixteen}</td>
                     <td>{leader.score}</td>
                   </tr>
