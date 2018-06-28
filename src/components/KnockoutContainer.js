@@ -17,6 +17,7 @@ class KnockoutContainer extends Component {
               <div className="group-header">
                 <h5 className="round-header">ROUND OF 16 | A-D</h5>
               </div>
+              <small className="kickoff-warning">All predictions lock when knockout begins</small>
               <div className="sixteen knockout-group">
                 <KnockoutGroup
                   token={this.props.token}
@@ -29,6 +30,7 @@ class KnockoutContainer extends Component {
               <div className="group-header">
                 <h5 className="round-header">QUARTERFINALS | A-D</h5>
               </div>
+              <small className="kickoff-warning">All predictions lock when knockout begins</small>
               <div className="quarterfinals knockout-group">
                 <KnockoutGroup
                   token={this.props.token}
@@ -41,6 +43,7 @@ class KnockoutContainer extends Component {
               <div className="group-header">
                 <h5 className="round-header">SEMIFINAL | FINAL | SEMIFINAL</h5>
               </div>
+              <small className="kickoff-warning">All predictions lock when knockout begins</small>
               <div className="final-three-container">
 
                 <div className="semifinals knockout-group">
@@ -74,6 +77,7 @@ class KnockoutContainer extends Component {
               <div className="group-header">
                 <h5 className="round-header">QUARTERFINALS | E-H</h5>
               </div>
+              <small className="kickoff-warning">All predictions lock when knockout begins</small>
               <div className="quarterfinals knockout-group">
                 <KnockoutGroup
                   token={this.props.token}
@@ -86,6 +90,7 @@ class KnockoutContainer extends Component {
               <div className="group-header">
                 <h5 className="round-header">ROUND OF 16 | E-H</h5>
               </div>
+              <small className="kickoff-warning">All predictions lock when knockout begins</small>
               <div className="sixteen knockout-group">
                 <KnockoutGroup
                   token={this.props.token}

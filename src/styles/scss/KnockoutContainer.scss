@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 5px;
+  margin: 10px 5px;
 }
 
 .knockout-tile p {
@@ -13,7 +13,6 @@
 .knockout-group {
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 .final-three-container {
   display: flex;
@@ -86,6 +85,16 @@
   cursor: pointer;
 }
 
+.knockout-warning {
+  color: #B40B22;
+  position: absolute;
+  top: -18px;
+  right: 0;
+}
+
+.kickoff-warning {
+  color: #96969A;
+}
 
 @media only screen and (max-width : 1130px) {
   .knockout-tile {
@@ -138,7 +147,7 @@
 
 @media only screen and (max-width : 500px) {
   .knockout-tile {
-    margin: 15px 5px;
+    margin: 5px 5px;
     .flag-group {
       flex-direction: column;
     }
