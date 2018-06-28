@@ -62,13 +62,14 @@
 
 @media only screen and (max-width : 480px) {
   .table td {
-    padding: 0.50rem;
     font-size: 0.9em;
+    padding: 0.50rem !important;
   }
   .league-header h3 {
     font-size: 1.30rem;
   }
   .table thead th {
     font-size: 0.9rem;
+    padding: 0.40rem !important;
   }
 }
