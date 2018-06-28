@@ -7,8 +7,8 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 class MatchesContainer extends Component {
   constructor() {
     super()
-    this.state = {groups: [], sort: "groups", matches: [], knockout_groups: []}
-    this.getGroups()
+    this.state = {groups: [], sort: "knockouts", matches: [], knockout_groups: []}
+    this.getKnockoutGroups()
 
   }
 
@@ -93,7 +93,7 @@ class MatchesContainer extends Component {
             <div className={`knockout-btn stage-btn ${this.state.sort === "knockouts" ? "stage-active" : ""}`} onClick={ this.sortByKnockoutGroups.bind(this) }>Knockout</div>
           </div>
         </div>
-        {this.state.groups.length === 0 &&
+        {this.state.groups.length === 0 && this.state.knockout_groups.length === 0 &&
           <div className="container">
             <h1><FontAwesomeIcon icon="spinner" spin /></h1>
           </div>
