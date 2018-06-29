@@ -40,7 +40,7 @@ class MatchesContainer extends Component {
     axios.get(localStorage.url + '/api/v1/knockouts', { headers: { 'Authorization': token }})
     .then(response => {
       console.log(response)
-      this.setState({knockout_groups: response.data.knockouts})
+      this.setState({knockout_groups: response.data.knockouts, token: token})
     })
     .catch(error => {console.log(error)
       this.addErrors();
