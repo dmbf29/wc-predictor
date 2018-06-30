@@ -42,7 +42,7 @@ class KnockoutGroup extends Component {
                 <small><span className="fifa-rank">Fifa Rank | </span>{match.team_home.ranking} vs. {match.team_away.ranking}</small>
               }
               { match.started === true && match.finished === false &&
-                <small><FontAwesomeIcon icon={faLock} /> Match Started </small>
+                <small><FontAwesomeIcon icon={faLock} /> Knockout Round Started </small>
               }
               { match.finished === true &&
                 <small>{match.team_home_score} - {match.team_away_score} | <span className={this.predictionResult(match)} >{ this.predictionResult(match) }</span></small>
