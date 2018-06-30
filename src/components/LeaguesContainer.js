@@ -99,7 +99,7 @@ class LeaguesContainer extends Component {
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">NAME</th>
-                  <th scope="col"># PICKS</th>
+                  <th scope="col">CHAMP</th>
                   <th scope="col">K/O</th>
                   <th scope="col">TOTAL</th>
                 </tr>
@@ -109,7 +109,7 @@ class LeaguesContainer extends Component {
                   <tr key={user.id} onClick={() => { this.visitPredictions(user) }}>
                     <td>{index + 1}</td>
                     <td>{user.name}</td>
-                    <td>{user.knockout_picks} / 15</td>
+                    <td>{user.champion}</td>
                     <td>{user.score_sixteen}</td>
                     <td>{user.score}</td>
                   </tr>
