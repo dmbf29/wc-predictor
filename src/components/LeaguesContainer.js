@@ -100,7 +100,7 @@ class LeaguesContainer extends Component {
                   <th scope="col">#</th>
                   <th scope="col">NAME</th>
                   <th scope="col">CHAMP</th>
-                  <th scope="col">K/O</th>
+                  <th scope="col">K/O PTS</th>
                   <th scope="col">TOTAL</th>
                 </tr>
               </thead>
