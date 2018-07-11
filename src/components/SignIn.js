@@ -69,6 +69,7 @@ class SignIn extends Component {
               >
                   Sign In
               </button>
+              <a style={{marginBottom: "5px"}} target="_blank" href='mailto:chris@kurisu.online'>Forgot password?</a>
               <Link to='/sign_up'>Sign up</Link>
             </div>
           </form>
