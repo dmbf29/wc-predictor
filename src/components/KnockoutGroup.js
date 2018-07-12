@@ -11,10 +11,12 @@ class KnockoutGroup extends Component {
   }
 
   predictionResult = (match) => {
-    if(match.prediction.correct === true){
+    if (match.prediction === null){
+      return "Incorrect"
+    } else if(match.prediction.correct === true){
       return "Correct"
     } else if (match.prediction.correct === false){
-      return"Incorrect"
+      return "Incorrect"
     }
   }
   homeTeam = (match) =>  {
